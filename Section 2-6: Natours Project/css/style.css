@@ -18,17 +18,23 @@ Dark green: #28b485
 }
 
 /* Styles Reset */
-* {
+*,
+*::before,
+*::after {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+html {
+  font-size: 62.5%;
+}
+
 body {
-  padding: 30px;
+  padding: 3rem;
   font-family: "Lato", sans-serif;
   font-weight: 400;
-  font-size: 16px;
+  /*font-size: 16px;*/
   line-height: 1;
   color: var(--font-primary);
 }
@@ -44,18 +50,18 @@ body {
       ),
       url('../img/hero.jpg');
   background-size: cover;
-  background-position: top;
+  background-position: center;
   clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
 }
 
 .logo-box {
   position: absolute;
-  top: 40px;
-  left: 40px;
+  top: 4rem;
+  left: 4rem;
 }
 
 .logo {
-  height: 35px;
+  height: 3.5rem;
 }
 
 /*
@@ -78,9 +84,9 @@ body {
 
 .heading-primary .heading-primary-main {
   display: block;
-  font-size: 60px;
-  margin-bottom: 25px;
-  letter-spacing: 25px;
+  font-size: 6rem;
+  margin-bottom: 2.5rem;
+  letter-spacing: 2.5rem;
 
   animation-name: moveInLeft;
   animation-duration: 500ms;
@@ -94,8 +100,8 @@ body {
 
 .heading-primary .heading-primary-sub {
   display: block;
-  font-size: 20px;
-  letter-spacing: 15px;
+  font-size: 2rem;
+  letter-spacing: 1.5rem;
   animation: moveInRight 500ms ease-out;
 }
 
@@ -104,8 +110,9 @@ body {
  */
 .btn {
   position: relative;
-  padding: 15px 40px;
-  border-radius: 100px;
+  padding: 1.5rem 4rem;
+  font-size: 1.6rem;
+  border-radius: 10rem;
   transition: all 150ms ease-out;
 }
 
@@ -122,19 +129,19 @@ body {
   z-index: -1;
 }
 
-.btn:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+.btn:hover, .btn:focus {
+  transform: translateY(-.3rem);
+  box-shadow: 0 .5rem 1.5rem rgba(0, 0, 0, 0.2);
 }
 
-.btn:hover::after {
+.btn:hover::after, .btn:focus::after {
   transform: scaleX(1.5) scaleY(1.8);
   opacity: 0;
 }
 
 .btn:active {
-  transform: translateY(-1px);
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  transform: translateY(-.1rem);
+  box-shadow: 0 .2rem 1rem rgba(0, 0, 0, 0.2);
 }
 
 .btn:link,
@@ -164,13 +171,13 @@ body {
  */
 @keyframes moveInLeft {
   0% {
-    transform: translateX(-100px);
+    transform: translateX(-10rem);
     visibility: hidden;
     opacity: 0;
   }
 
   80% {
-    transform: translateX(10px);
+    transform: translateX(1rem);
   }
 
   100% {
@@ -182,13 +189,13 @@ body {
 
 @keyframes moveInRight {
   0% {
-    transform: translateX(100px);
+    transform: translateX(10rem);
     visibility: hidden;
     opacity: 0;
   }
 
   80% {
-    transform: translateX(-10px);
+    transform: translateX(-1rem);
   }
 
   100% {
