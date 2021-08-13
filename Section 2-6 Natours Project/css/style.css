@@ -39,6 +39,9 @@ body {
   color: var(--font-primary);
 }
 
+/*
+  =================== HEADING COMPONENT ======================
+ */
 .header {
   position: relative;
   height: 90vh;
@@ -54,20 +57,17 @@ body {
   clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
 }
 
-.logo-box {
+.header__logo-box {
   position: absolute;
   top: 4rem;
   left: 4rem;
 }
 
-.logo {
+.header__logo {
   height: 3.5rem;
 }
 
-/*
-  =================== HEADING ======================
- */
-.header-center-container {
+.header__title-box {
   position: relative;
   top: 25%;
   left: 50%;
@@ -75,6 +75,9 @@ body {
   text-align: center;
 }
 
+/*
+  =================== HEADING PRIMARY COMPONENT ======================
+ */
 .heading-primary {
   color: var(--font-primary);
   font-weight: 400;
@@ -82,7 +85,7 @@ body {
   text-align: center;
 }
 
-.heading-primary .heading-primary-main {
+.heading-primary .heading-primary--main {
   display: block;
   font-size: 6rem;
   margin-bottom: 2.5rem;
@@ -98,7 +101,7 @@ body {
   */
 }
 
-.heading-primary .heading-primary-sub {
+.heading-primary .heading-primary--sub {
   display: block;
   font-size: 2rem;
   letter-spacing: 1.5rem;
@@ -106,7 +109,7 @@ body {
 }
 
 /*
-  =================== HEADER BUTTON ======================
+  =================== BUTTON COMPONENT ======================
  */
 .btn {
   position: relative;
@@ -151,16 +154,16 @@ body {
   display: inline-block;
 }
 
-.btn-white {
+.btn--white {
   background-color: var(--font-primary);
   color: var(--font-primary-dark);
 }
 
-.btn-white::after {
+.btn--white::after {
   background-color: var(--font-primary);
 }
 
-.btn-animated {
+.btn--animated {
   animation: appear 1.5s ease-in 0.5s;
   /* This property applies the values of 0% before the animation is played*/
   animation-fill-mode: backwards;
