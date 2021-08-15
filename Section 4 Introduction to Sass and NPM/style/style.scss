@@ -1,0 +1,81 @@
+// Variables
+$primary: hsl(178, 60%, 77%);
+$secondary: hsl(37, 87%, 88%);
+$tertiary: hsl(350, 100%, 84%);
+
+$text-dark: hsl(0, 0%, 30%);
+
+$button-width: 150px;
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+}
+
+nav {
+  margin: 30px;
+  background-color: $primary;
+
+  &::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+}
+
+.navigation {
+  float: left;
+  list-style: none;
+
+  li {
+    display: inline-block;
+
+    &:not(:first-child) {
+      margin-left: 20px;
+    }
+
+    a:link {
+      text-decoration: none;
+      text-transform: uppercase;
+      color: $text-dark;
+    }
+  }
+}
+
+.buttons {
+  float: right;
+}
+
+.btn-main,
+.btn-hot {
+  display: inline-block;
+  padding: 10px;
+  width: $button-width;
+  border-radius: 50px;
+  color: $text-dark;
+  text-decoration: none;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.btn-main {
+  &:link {
+    background-color: $secondary;
+  }
+  &:hover {
+    background-color: darken($secondary, 10%);
+  }
+}
+
+.btn-hot {
+  &:link {
+    background-color: $tertiary;
+  }
+  &:hover {
+    background-color: lighten($tertiary, 5%);
+  }
+}
