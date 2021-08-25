@@ -6,17 +6,6 @@ Medium green: #55c57a
 Dark green: #28b485
 
 */
-:root {
-  --light-green: #7ed56f;
-  --light-green-rgb: 126,213,111;
-  --medium-green: #55c57a;
-  --medium-green-rgb: 85,197,122;
-  --dark-green: #28b485;
-  --dark-green-rgb: 40,180,133;
-  --font-primary: #FFF;
-  --font-primary-dark: #777;
-}
-
 /* Styles Reset */
 *,
 *::before,
@@ -36,7 +25,7 @@ body {
   font-weight: 400;
   /*font-size: 16px;*/
   line-height: 1;
-  color: var(--font-primary);
+  color: #FFF;
 }
 
 /*
@@ -45,13 +34,7 @@ body {
 .header {
   position: relative;
   height: 90vh;
-  background-image:
-      linear-gradient(
-          to right bottom,
-          rgba(var(--light-green-rgb), 0.8),
-          rgba(var(--dark-green-rgb), 0.8)
-      ),
-      url('../img/hero.jpg');
+  background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.8), rgba(40, 180, 133, 0.8)), url("../img/hero.jpg");
   background-size: cover;
   background-position: center;
   clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
@@ -79,7 +62,7 @@ body {
   =================== HEADING PRIMARY COMPONENT ======================
  */
 .heading-primary {
-  color: var(--font-primary);
+  color: #FFF;
   font-weight: 400;
   text-transform: uppercase;
   text-align: center;
@@ -90,11 +73,9 @@ body {
   font-size: 6rem;
   margin-bottom: 2.5rem;
   letter-spacing: 2.5rem;
-
   animation-name: moveInLeft;
   animation-duration: 500ms;
   animation-timing-function: ease-out;
-
   /*
   animation-delay: 5s;
   animation-iteration-count: 3;
@@ -133,8 +114,8 @@ body {
 }
 
 .btn:hover, .btn:focus {
-  transform: translateY(-.3rem);
-  box-shadow: 0 .5rem 1.5rem rgba(0, 0, 0, 0.2);
+  transform: translateY(-0.3rem);
+  box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.2);
 }
 
 .btn:hover::after, .btn:focus::after {
@@ -143,8 +124,8 @@ body {
 }
 
 .btn:active {
-  transform: translateY(-.1rem);
-  box-shadow: 0 .2rem 1rem rgba(0, 0, 0, 0.2);
+  transform: translateY(-0.1rem);
+  box-shadow: 0 0.2rem 1rem rgba(0, 0, 0, 0.2);
 }
 
 .btn:link,
@@ -155,12 +136,12 @@ body {
 }
 
 .btn--white {
-  background-color: var(--font-primary);
-  color: var(--font-primary-dark);
+  background-color: #FFF;
+  color: #777;
 }
 
 .btn--white::after {
-  background-color: var(--font-primary);
+  background-color: #FFF;
 }
 
 .btn--animated {
@@ -178,42 +159,37 @@ body {
     visibility: hidden;
     opacity: 0;
   }
-
   80% {
     transform: translateX(1rem);
   }
-
   100% {
     transform: translateX(0);
     visibility: visible;
     opacity: 1;
   }
 }
-
 @keyframes moveInRight {
   0% {
     transform: translateX(10rem);
     visibility: hidden;
     opacity: 0;
   }
-
   80% {
     transform: translateX(-1rem);
   }
-
   100% {
     transform: translateX(0);
     visibility: visible;
     opacity: 1;
   }
 }
-
 @keyframes appear {
-    0% {
-      opacity: 0;
-    }
-
-    100% {
-      opacity: 1;
-    }
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
+
+/*# sourceMappingURL=main.css.map */
