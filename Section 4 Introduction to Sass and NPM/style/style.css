@@ -27,26 +27,26 @@ nav::after {
 .navigation li:not(:first-child) {
   margin-left: 20px;
 }
-.navigation li a:link {
+.navigation li > a {
   text-decoration: none;
   text-transform: uppercase;
-  color: #4d4d4d;
+  text-align: center;
+  color: white;
 }
 
 .buttons {
   float: right;
 }
 
-.btn-main,
-.btn-hot {
+.btn-hot:link, .btn-main:link {
   display: inline-block;
   padding: 10px;
   width: 150px;
   border-radius: 50px;
-  color: #4d4d4d;
   text-decoration: none;
   text-transform: uppercase;
   text-align: center;
+  color: #4d4d4d;
 }
 
 .btn-main:link {

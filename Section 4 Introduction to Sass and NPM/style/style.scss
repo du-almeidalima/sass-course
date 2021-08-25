@@ -4,8 +4,30 @@ $secondary: hsl(37, 87%, 88%);
 $tertiary: hsl(350, 100%, 84%);
 
 $text-dark: hsl(0, 0%, 30%);
+$text-light: hsl(0, 0%, 100%);
 
 $button-width: 150px;
+
+// Mixin is basically a reusable piece of code.
+
+@mixin clearfix {
+  &::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+}
+
+@mixin style-link-text($color) {
+  text-decoration: none;
+  text-transform: uppercase;
+  text-align: center;
+  color: $color;
+}
+
+@function divide($a, $b) {
+  @return $a / $b
+}
 
 *,
 *::after,
@@ -20,11 +42,7 @@ nav {
   margin: 30px;
   background-color: $primary;
 
-  &::after {
-    content: "";
-    clear: both;
-    display: table;
-  }
+  @include clearfix;
 }
 
 .navigation {
@@ -35,13 +53,11 @@ nav {
     display: inline-block;
 
     &:not(:first-child) {
-      margin-left: 20px;
+      margin-left: divide(40, 2) * 1px;
     }
 
-    a:link {
-      text-decoration: none;
-      text-transform: uppercase;
-      color: $text-dark;
+    & > a {
+      @include style-link-text($text-light);
     }
   }
 }
@@ -50,20 +66,24 @@ nav {
   float: right;
 }
 
-.btn-main,
-.btn-hot {
+// This is a placeholder. Its functionality is really similar to a mixin
+// However, a mixin copies the content into where it's applied, the extent,
+// Replaces the selector with the placeholder. So if multiple rules uses an
+// placeholder, it'll not copy them, but kind of create a multiple selector.
+// See compiled code.
+%btn-placeholder {
   display: inline-block;
   padding: 10px;
   width: $button-width;
   border-radius: 50px;
-  color: $text-dark;
-  text-decoration: none;
-  text-transform: uppercase;
-  text-align: center;
+
+  @include style-link-text($text-dark);
 }
 
 .btn-main {
   &:link {
+    // How to apply an placeholder/extend it
+    @extend %btn-placeholder;
     background-color: $secondary;
   }
   &:hover {
@@ -73,6 +93,7 @@ nav {
 
 .btn-hot {
   &:link {
+    @extend %btn-placeholder;
     background-color: $tertiary;
   }
   &:hover {
