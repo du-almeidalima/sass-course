@@ -1,11 +1,44 @@
 /*
-COLORS:
-
-Light green: #7ed56f
-Medium green: #55c57a
-Dark green: #28b485
-
-*/
+  =================== ANIMATIONS ======================
+ */
+@keyframes moveInLeft {
+  0% {
+    transform: translateX(-10rem);
+    visibility: hidden;
+    opacity: 0;
+  }
+  80% {
+    transform: translateX(1rem);
+  }
+  100% {
+    transform: translateX(0);
+    visibility: visible;
+    opacity: 1;
+  }
+}
+@keyframes moveInRight {
+  0% {
+    transform: translateX(10rem);
+    visibility: hidden;
+    opacity: 0;
+  }
+  80% {
+    transform: translateX(-1rem);
+  }
+  100% {
+    transform: translateX(0);
+    visibility: visible;
+    opacity: 1;
+  }
+}
+@keyframes appear {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 /* Styles Reset */
 *,
 *::before,
@@ -21,42 +54,18 @@ html {
 
 body {
   padding: 3rem;
+}
+
+body {
   font-family: "Lato", sans-serif;
   font-weight: 400;
-  /*font-size: 16px;*/
   line-height: 1;
   color: #FFF;
 }
 
 /*
-  =================== HEADING COMPONENT ======================
- */
-.header {
-  position: relative;
-  height: 90vh;
-  background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.8), rgba(40, 180, 133, 0.8)), url("../img/hero.jpg");
-  background-size: cover;
-  background-position: center;
-  clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
-}
-.header__logo-box {
-  position: absolute;
-  top: 4rem;
-  left: 4rem;
-}
-.header__logo {
-  height: 3.5rem;
-}
-.header__title-box {
-  position: relative;
-  top: 25%;
-  left: 50%;
-  transform: translateX(-50%);
-  text-align: center;
-}
-
-/*
   =================== HEADING PRIMARY COMPONENT ======================
+  This could also be a component...
  */
 .heading-primary {
   color: #FFF;
@@ -137,45 +146,43 @@ body {
 }
 
 /*
-  =================== ANIMATIONS ======================
+  =================== HEADING COMPONENT ======================
  */
-@keyframes moveInLeft {
-  0% {
-    transform: translateX(-10rem);
-    visibility: hidden;
-    opacity: 0;
-  }
-  80% {
-    transform: translateX(1rem);
-  }
-  100% {
-    transform: translateX(0);
-    visibility: visible;
-    opacity: 1;
-  }
+.header {
+  position: relative;
+  height: 90vh;
+  background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.8), rgba(40, 180, 133, 0.8)), url("../img/hero.jpg");
+  background-size: cover;
+  background-position: center;
+  clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
 }
-@keyframes moveInRight {
-  0% {
-    transform: translateX(10rem);
-    visibility: hidden;
-    opacity: 0;
-  }
-  80% {
-    transform: translateX(-1rem);
-  }
-  100% {
-    transform: translateX(0);
-    visibility: visible;
-    opacity: 1;
-  }
+.header__logo-box {
+  position: absolute;
+  top: 4rem;
+  left: 4rem;
 }
-@keyframes appear {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
+.header__logo {
+  height: 3.5rem;
 }
+.header__title-box {
+  position: relative;
+  top: 25%;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+}
+
+/*
+ * This Application is following the 7 - 1 CSS Architecture
+ * - Base: Basic CSS Resets and html and body styles
+ * - Abstract: Code that is not output css, such as variables, mixins...
+ * - Component: Reusable building blocks, there will be one file per
+ *   component
+ * - Layout: Global components that are going to build a common layout
+ *   for every or most pages.
+ * - Pages: Will be containers for components that will compose a page.
+ * - Themes: For color themes (not included)
+ * - Vendor: Third party css codes, such Bootstrap, Tailwind... (not included)
+ */
 
 /*# sourceMappingURL=main.css.map */

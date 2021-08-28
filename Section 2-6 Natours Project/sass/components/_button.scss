@@ -1,0 +1,59 @@
+/*
+  =================== BUTTON COMPONENT ======================
+ */
+.btn {
+  position: relative;
+  padding: 1.5rem 4rem;
+  font-size: 1.6rem;
+  border-radius: 10rem;
+  transition: all 150ms ease-out;
+
+  &::after {
+    position: absolute;
+    display: inline-block;
+    border-radius: inherit;
+    transition: all 300ms ease-out;
+    top: 0;
+    left: 0;
+    content: "";
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+}
+
+  &:hover, &:focus {
+    transform: translateY(-.3rem);
+    box-shadow: 0 .5rem 1.5rem rgba($black, .2);
+
+    &::after {
+      transform: scaleX(1.5) scaleY(1.8);
+      opacity: 0;
+  }
+}
+
+  &:active {
+    transform: translateY(-.1rem);
+    box-shadow: 0 .2rem 1rem rgba($black, .2)
+}
+
+  &:link, &:visited {
+    text-transform: uppercase;
+    text-decoration: none;
+    display: inline-block;
+}
+
+  &--white {
+    background-color: $font-primary;
+    color: $font-primary-dark;
+
+    &::after {
+      background-color: $font-primary;
+  }
+}
+
+  &--animated {
+    animation: appear 1.5s ease-in 0.5s;
+    /* This property applies the values of 0% before the animation is played*/
+    animation-fill-mode: backwards;
+}
+}

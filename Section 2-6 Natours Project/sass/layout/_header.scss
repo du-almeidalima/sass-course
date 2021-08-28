@@ -1,0 +1,36 @@
+/*
+  =================== HEADING COMPONENT ======================
+ */
+.header {
+  position: relative;
+  height: 90vh;
+  background-image: linear-gradient(
+                  to right bottom,
+                  rgba($light-green, 0.8),
+                  rgba($dark-green, 0.8)
+  ),
+  url('../img/hero.jpg');
+  background-size: cover;
+  background-position: center;
+  clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+
+  // LOGO
+  &__logo-box {
+    position: absolute;
+    top: 4rem;
+    left: 4rem;
+  }
+
+  &__logo {
+    height: 3.5rem;
+  }
+
+  // TITLE
+  &__title-box {
+    position: relative;
+    top: 25%;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+  }
+}
