@@ -9,7 +9,7 @@ Dark green: #28b485
 $light-green: #7ed56f;
 $medium-green: #55c57a;
 $dark-green: #28b485;
-
+$black: rgba(0, 0, 0);
 $font-primary: #FFF;
 $font-primary-dark: #777;
 
@@ -50,24 +50,26 @@ body {
   background-size: cover;
   background-position: center;
   clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
-}
 
-.header__logo-box {
-  position: absolute;
-  top: 4rem;
-  left: 4rem;
-}
+  // LOGO
+  &__logo-box {
+    position: absolute;
+    top: 4rem;
+    left: 4rem;
+  }
 
-.header__logo {
-  height: 3.5rem;
-}
+  &__logo {
+    height: 3.5rem;
+  }
 
-.header__title-box {
-  position: relative;
-  top: 25%;
-  left: 50%;
-  transform: translateX(-50%);
-  text-align: center;
+  // TITLE
+  &__title-box {
+    position: relative;
+    top: 25%;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+  }
 }
 
 /*
@@ -78,29 +80,29 @@ body {
   font-weight: 400;
   text-transform: uppercase;
   text-align: center;
-}
 
-.heading-primary .heading-primary--main {
-  display: block;
-  font-size: 6rem;
-  margin-bottom: 2.5rem;
-  letter-spacing: 2.5rem;
+  &--main {
+    display: block;
+    font-size: 6rem;
+    margin-bottom: 2.5rem;
+    letter-spacing: 2.5rem;
 
-  animation-name: moveInLeft;
-  animation-duration: 500ms;
-  animation-timing-function: ease-out;
+    animation-name: moveInLeft;
+    animation-duration: 500ms;
+    animation-timing-function: ease-out;
 
-  /*
-  animation-delay: 5s;
-  animation-iteration-count: 3;
-  */
-}
+    /*
+    animation-delay: 5s;
+    animation-iteration-count: 3;
+    */
+  }
 
-.heading-primary .heading-primary--sub {
-  display: block;
-  font-size: 2rem;
-  letter-spacing: 1.5rem;
-  animation: moveInRight 500ms ease-out;
+  &--sub {
+    display: block;
+    font-size: 2rem;
+    letter-spacing: 1.5rem;
+    animation: moveInRight 500ms ease-out;
+  }
 }
 
 /*
@@ -112,57 +114,57 @@ body {
   font-size: 1.6rem;
   border-radius: 10rem;
   transition: all 150ms ease-out;
+
+  &::after {
+    position: absolute;
+    display: inline-block;
+    border-radius: inherit;
+    transition: all 300ms ease-out;
+    top: 0;
+    left: 0;
+    content: "";
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+  }
+
+  &:hover, &:focus {
+    transform: translateY(-.3rem);
+    box-shadow: 0 .5rem 1.5rem rgba($black, .2);
+
+    &::after {
+      transform: scaleX(1.5) scaleY(1.8);
+      opacity: 0;
+    }
+  }
+
+  &:active {
+    transform: translateY(-.1rem);
+    box-shadow: 0 .2rem 1rem rgba($black, .2)
+  }
+
+  &:link, &:visited {
+    text-transform: uppercase;
+    text-decoration: none;
+    display: inline-block;
+  }
+
+  &--white {
+    background-color: $font-primary;
+    color: $font-primary-dark;
+
+    &::after {
+      background-color: $font-primary;
+    }
+  }
+
+  &--animated {
+    animation: appear 1.5s ease-in 0.5s;
+    /* This property applies the values of 0% before the animation is played*/
+    animation-fill-mode: backwards;
+  }
 }
 
-.btn::after {
-  position: absolute;
-  display: inline-block;
-  border-radius: inherit;
-  transition: all 300ms ease-out;
-  top: 0;
-  left: 0;
-  content: "";
-  height: 100%;
-  width: 100%;
-  z-index: -1;
-}
-
-.btn:hover, .btn:focus {
-  transform: translateY(-.3rem);
-  box-shadow: 0 .5rem 1.5rem rgba(0, 0, 0, 0.2);
-}
-
-.btn:hover::after, .btn:focus::after {
-  transform: scaleX(1.5) scaleY(1.8);
-  opacity: 0;
-}
-
-.btn:active {
-  transform: translateY(-.1rem);
-  box-shadow: 0 .2rem 1rem rgba(0, 0, 0, 0.2);
-}
-
-.btn:link,
-.btn:visited {
-  text-transform: uppercase;
-  text-decoration: none;
-  display: inline-block;
-}
-
-.btn--white {
-  background-color: $font-primary;
-  color: $font-primary-dark;
-}
-
-.btn--white::after {
-  background-color: $font-primary;
-}
-
-.btn--animated {
-  animation: appear 1.5s ease-in 0.5s;
-  /* This property applies the values of 0% before the animation is played*/
-  animation-fill-mode: backwards;
-}
 
 /*
   =================== ANIMATIONS ======================
