@@ -1,0 +1,7 @@
+@forward "variables";
+@forward "mixins";
+@forward "functions";
+
+// @forward is part of the new scss module system, along with @use.
+// @forward basically imports a file(s) and allows it to be used by other
+// files that import it. It's like it creates its own namespace.

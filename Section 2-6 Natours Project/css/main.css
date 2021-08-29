@@ -1,4 +1,83 @@
 /*
+  =================== BUTTON COMPONENT ======================
+ */
+.btn {
+  position: relative;
+  padding: 1.5rem 4rem;
+  font-size: 1.6rem;
+  border-radius: 10rem;
+  transition: all 150ms ease-out;
+}
+.btn::after {
+  position: absolute;
+  display: inline-block;
+  border-radius: inherit;
+  transition: all 300ms ease-out;
+  top: 0;
+  left: 0;
+  content: "";
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+}
+.btn:hover, .btn:focus {
+  transform: translateY(-0.3rem);
+  box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.2);
+}
+.btn:hover::after, .btn:focus::after {
+  transform: scaleX(1.5) scaleY(1.8);
+  opacity: 0;
+}
+.btn:active {
+  transform: translateY(-0.1rem);
+  box-shadow: 0 0.2rem 1rem rgba(0, 0, 0, 0.2);
+}
+.btn:link, .btn:visited {
+  text-transform: uppercase;
+  text-decoration: none;
+  display: inline-block;
+}
+.btn--white {
+  background-color: #FFF;
+  color: #777;
+}
+.btn--white::after {
+  background-color: #FFF;
+}
+.btn--animated {
+  animation: appear 1.5s ease-in 0.5s;
+  /* This property applies the values of 0% before the animation is played*/
+  animation-fill-mode: backwards;
+}
+
+/*
+  =================== HEADING COMPONENT ======================
+ */
+.header {
+  position: relative;
+  height: 90vh;
+  background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.8), rgba(40, 180, 133, 0.8)), url("../img/hero.jpg");
+  background-size: cover;
+  background-position: center;
+  clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+}
+.header__logo-box {
+  position: absolute;
+  top: 4rem;
+  left: 4rem;
+}
+.header__logo {
+  height: 3.5rem;
+}
+.header__title-box {
+  position: relative;
+  top: 25%;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+}
+
+/*
   =================== ANIMATIONS ======================
  */
 @keyframes moveInLeft {
@@ -91,85 +170,6 @@ body {
   font-size: 2rem;
   letter-spacing: 1.5rem;
   animation: moveInRight 500ms ease-out;
-}
-
-/*
-  =================== BUTTON COMPONENT ======================
- */
-.btn {
-  position: relative;
-  padding: 1.5rem 4rem;
-  font-size: 1.6rem;
-  border-radius: 10rem;
-  transition: all 150ms ease-out;
-}
-.btn::after {
-  position: absolute;
-  display: inline-block;
-  border-radius: inherit;
-  transition: all 300ms ease-out;
-  top: 0;
-  left: 0;
-  content: "";
-  height: 100%;
-  width: 100%;
-  z-index: -1;
-}
-.btn:hover, .btn:focus {
-  transform: translateY(-0.3rem);
-  box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.2);
-}
-.btn:hover::after, .btn:focus::after {
-  transform: scaleX(1.5) scaleY(1.8);
-  opacity: 0;
-}
-.btn:active {
-  transform: translateY(-0.1rem);
-  box-shadow: 0 0.2rem 1rem rgba(0, 0, 0, 0.2);
-}
-.btn:link, .btn:visited {
-  text-transform: uppercase;
-  text-decoration: none;
-  display: inline-block;
-}
-.btn--white {
-  background-color: #FFF;
-  color: #777;
-}
-.btn--white::after {
-  background-color: #FFF;
-}
-.btn--animated {
-  animation: appear 1.5s ease-in 0.5s;
-  /* This property applies the values of 0% before the animation is played*/
-  animation-fill-mode: backwards;
-}
-
-/*
-  =================== HEADING COMPONENT ======================
- */
-.header {
-  position: relative;
-  height: 90vh;
-  background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.8), rgba(40, 180, 133, 0.8)), url("../img/hero.jpg");
-  background-size: cover;
-  background-position: center;
-  clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
-}
-.header__logo-box {
-  position: absolute;
-  top: 4rem;
-  left: 4rem;
-}
-.header__logo {
-  height: 3.5rem;
-}
-.header__title-box {
-  position: relative;
-  top: 25%;
-  left: 50%;
-  transform: translateX(-50%);
-  text-align: center;
 }
 
 /*
