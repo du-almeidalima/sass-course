@@ -1,0 +1,59 @@
+@use "../abstract/variables" as vars;
+@use "../abstract/mixins";
+
+.row {
+  max-width: 114rem;
+  background-color: gray;
+  margin: 0 auto;
+
+  @include mixins.clearfix;
+
+  &:not(:last-of-type) {
+    margin-bottom: vars.$grid-vertical-gutter;
+  }
+
+  // COLUMNS
+
+  // This selector works like a RegEx for class matching
+  // - "^" for 'starts with'
+  // - "$" for 'ends with'
+  [class^="col-"] {
+    float: left;
+    background-color: #7ed56f;
+
+    &:not(:last-of-type) {
+      margin-right: vars.$grid-horizontal-gutter;
+    }
+  }
+
+  .col-1-of-1 {
+    width: 100%;
+  }
+
+  .col-1-of-2 {
+    width: calc((100% - #{vars.$grid-horizontal-gutter}) / 2);
+  }
+
+  .col-1-of-3 {
+    width: calc((100% - 2 * #{vars.$grid-horizontal-gutter}) / 3);
+  }
+
+  // Two 1/3 cols + gutter
+  .col-2-of-3 {
+    width: calc(((100% - 2 * #{vars.$grid-horizontal-gutter}) / 3) * 2 + #{vars.$grid-horizontal-gutter});
+  }
+
+  .col-1-of-4 {
+    width: calc((100% - 3 * #{vars.$grid-horizontal-gutter}) / 4);
+  }
+
+  // Two 2/4 cols + gutter
+  .col-2-of-4 {
+    width: calc(((100% - 3 * #{vars.$grid-horizontal-gutter}) / 4) * 2 + #{vars.$grid-horizontal-gutter});
+  }
+
+  // Two 2/4 cols + 2 * gutter
+  .col-3-of-4 {
+    width: calc(((100% - 3 * #{vars.$grid-horizontal-gutter}) / 4) * 3 + 2 * #{vars.$grid-horizontal-gutter});
+  }
+}
