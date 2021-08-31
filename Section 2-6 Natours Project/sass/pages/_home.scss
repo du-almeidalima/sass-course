@@ -1,0 +1,8 @@
+@use '../abstract/variables' as vars;
+
+.section-about {
+  background-color: vars.$gray-light-1;
+  padding: 25rem 0;
+  // Heading 90vh - 75vh
+  margin-top: -15vh;
+}
