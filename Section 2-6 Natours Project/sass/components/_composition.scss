@@ -1,0 +1,42 @@
+@use '../abstract/variables' as vars;
+
+.composition {
+  position: relative;
+
+  // CSS as JavaScript kinda bubbles the 'events', so when hovering
+  // a child, the parent is also hovered.
+  &:hover &__photo:not(:hover) {
+    transform: scale(0.95);
+  }
+
+  &__photo {
+    position: absolute;
+    width: 55%;
+    box-shadow: 0 1.5rem 4rem rgba(vars.$black, .4);
+    transition: 100ms transform ease-out;
+
+    &:hover {
+      outline: 1rem solid vars.$light-green;
+      outline-offset: 1rem;
+      transform: scale(1.1);
+      box-shadow: 1rem 1.5rem 6rem rgba(vars.$black, .4);
+      z-index: 4;
+    }
+
+    &--p1 {
+      z-index: 1;
+    }
+
+    &--p2 {
+      left: 40%;
+      top: 5rem;
+      z-index: 2;
+    }
+
+    &--p3 {
+      left: 15%;
+      top: 12rem;
+      z-index: 3;
+    }
+  }
+}

@@ -18,7 +18,6 @@
   // - "$" for 'ends with'
   [class^="col-"] {
     float: left;
-
     &:not(:last-of-type) {
       margin-right: vars.$grid-horizontal-gutter;
     }

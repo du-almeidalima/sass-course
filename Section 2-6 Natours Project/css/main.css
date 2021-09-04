@@ -69,6 +69,39 @@
   transform: translateY(0);
 }
 
+.composition {
+  position: relative;
+}
+.composition:hover .composition__photo:not(:hover) {
+  transform: scale(0.95);
+}
+.composition__photo {
+  position: absolute;
+  width: 55%;
+  box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.4);
+  transition: 100ms transform ease-out;
+}
+.composition__photo:hover {
+  outline: 1rem solid #7ed56f;
+  outline-offset: 1rem;
+  transform: scale(1.1);
+  box-shadow: 1rem 1.5rem 6rem rgba(0, 0, 0, 0.4);
+  z-index: 4;
+}
+.composition__photo--p1 {
+  z-index: 1;
+}
+.composition__photo--p2 {
+  left: 40%;
+  top: 5rem;
+  z-index: 2;
+}
+.composition__photo--p3 {
+  left: 15%;
+  top: 12rem;
+  z-index: 3;
+}
+
 /*
   =================== HEADING COMPONENT ======================
  */
