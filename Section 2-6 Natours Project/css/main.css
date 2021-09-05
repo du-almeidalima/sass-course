@@ -102,6 +102,31 @@
   z-index: 3;
 }
 
+.feature-box {
+  padding: 3rem 2rem;
+  height: 25rem;
+  border: 1px solid lightgray;
+  border-radius: 3px;
+  background: rgba(255, 255, 255, 0.8);
+  box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.2);
+  font-size: 1.5rem;
+  transition: transform 100ms ease-out;
+}
+.feature-box:hover {
+  transform: translateY(-1.5rem) scale(1.05);
+}
+.feature-box__icon {
+  display: block;
+  font-size: 6rem;
+  margin-bottom: 2rem;
+  color: transparent;
+  background-image: linear-gradient(to right, #7ed56f, #28b485);
+  -webkit-background-clip: text;
+}
+.feature-box__description {
+  line-height: normal;
+}
+
 /*
   =================== HEADING COMPONENT ======================
  */
@@ -494,11 +519,11 @@ body {
 
 .heading-secondary {
   display: inline-block;
-  color: transparent;
   font-size: 3.5rem;
   font-weight: 700;
   text-transform: uppercase;
   transition: all 200ms;
+  color: transparent;
   background-image: linear-gradient(to right, #7ed56f, #28b485);
   -webkit-background-clip: text;
 }
@@ -525,6 +550,16 @@ body {
   background-color: #f7f7f7;
   padding: 25rem 0;
   margin-top: -15vh;
+}
+
+.section-features {
+  padding: 20rem 0;
+  margin-top: -5.5rem;
+  background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.8), rgba(40, 180, 133, 0.8)), url("../img/nat-4.jpg");
+  transform: skewY(-5deg);
+}
+.section-features > * {
+  transform: skewY(5deg);
 }
 
 /*

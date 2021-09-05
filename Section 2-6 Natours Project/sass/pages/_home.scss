@@ -6,3 +6,21 @@
   // Heading 90vh - 75vh
   margin-top: -15vh;
 }
+
+.section-features {
+  $skew-amount: 5deg;
+
+  padding: 20rem 0;
+  margin-top: -5.5rem;
+  background-image: linear-gradient(
+                  to right bottom,
+                  rgba(vars.$light-green, 0.8),
+                  rgba(vars.$dark-green, 0.8)
+  ),
+  url('../img/nat-4.jpg');
+  transform: skewY(-$skew-amount);
+
+  & > * {
+    transform: skewY($skew-amount);
+  }
+}

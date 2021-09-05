@@ -1,0 +1,31 @@
+@use "../abstract/variables" as vars;
+@use "../abstract/mixins" as *;
+
+.feature-box {
+  padding: 3rem 2rem;
+  height: 25rem;
+  border: 1px solid lightgray;
+  border-radius: 3px;
+  background: rgba(vars.$white, .8);
+  box-shadow:
+    0 1.5rem 4rem rgba(vars.$black, .2);
+  font-size: 1.5rem;
+  transition: transform 100ms ease-out;
+
+  &:hover {
+    transform: translateY(-1.5rem) scale(1.05);
+  }
+
+  &__icon {
+    display: block;
+    font-size: 6rem;
+    margin-bottom: 2rem;
+
+    @include gradient-background;
+
+  }
+
+  &__description {
+    line-height: normal;
+  }
+}

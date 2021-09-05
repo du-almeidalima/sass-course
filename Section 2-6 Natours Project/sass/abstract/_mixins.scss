@@ -1,7 +1,15 @@
+@use "variables" as vars;
+
 @mixin clearfix {
   &::after {
     content: '';
     display: table;
     clear: both;
   }
+}
+
+@mixin gradient-background {
+  color: transparent;
+  background-image: linear-gradient(to right, vars.$light-green, vars.$dark-green);
+  -webkit-background-clip: text;
 }
