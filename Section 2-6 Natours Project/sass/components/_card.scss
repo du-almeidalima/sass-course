@@ -1,0 +1,56 @@
+@use '../abstract/variables' as vars;
+
+@mixin card-gradient-background($start-color, $end-color) {
+  background-image: linear-gradient(to right bottom, $start-color, $end-color);
+}
+
+.card {
+  $card-height: 50rem;
+
+  position: relative;
+  perspective: 150rem;
+  -moz-perspective: 150rem;
+  height: $card-height;
+
+  &:hover &__side--front {
+    transform: rotateY(180deg);
+  }
+
+  &:hover &__side--back {
+    transform: rotateY(0);
+  }
+
+  &__side {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: $card-height;
+    backface-visibility: hidden;
+    transition: all 500ms ease-out;
+    border-radius: 3px;
+    box-shadow: 0 1.5rem 4rem rgba(vars.$black, .15);
+
+    text-align: center;
+    line-height: $card-height;
+    font-size: 3rem;
+    &--front {
+      // TODO Create Front
+    }
+
+    &--back {
+      background-color: darkseagreen;
+      transform: rotateY(-180deg);
+
+      &--orange {
+        @include card-gradient-background(vars.$orange-light, vars.$orange-medium)
+      }
+      &--green {
+        @include card-gradient-background(vars.$green-light, vars.$green-dark)
+      }
+      &--blue {
+        @include card-gradient-background(vars.$blue-light, vars.$blue-medium)
+      }
+    }
+  }
+}
