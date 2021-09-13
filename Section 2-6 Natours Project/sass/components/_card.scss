@@ -5,19 +5,22 @@
 }
 
 .card {
-  $card-height: 50rem;
+  $card-height: 55rem;
 
-  position: relative;
+  height: $card-height;
   perspective: 150rem;
   -moz-perspective: 150rem;
-  height: $card-height;
 
-  &:hover &__side--front {
+  &:hover &__perspective {
     transform: rotateY(180deg);
   }
 
-  &:hover &__side--back {
-    transform: rotateY(0);
+  // This wrapper was included so the perspective rotation would work on Firefox
+  // Otherwise it would get buggy
+  &__perspective {
+    position: relative;
+    transition: all 500ms ease-out;
+    transform-style: preserve-3d;
   }
 
   &__side {
@@ -27,13 +30,11 @@
     width: 100%;
     height: $card-height;
     backface-visibility: hidden;
-    transition: all 500ms ease-out;
-    border-radius: 3px;
+    border-radius: 5px;
     box-shadow: 0 1.5rem 4rem rgba(vars.$black, .15);
+    // So the image doesn't overflow the rounded corner
+    overflow: hidden;
 
-    text-align: center;
-    line-height: $card-height;
-    font-size: 3rem;
     &--front {
       // TODO Create Front
     }
@@ -45,11 +46,86 @@
       &--orange {
         @include card-gradient-background(vars.$orange-light, vars.$orange-medium)
       }
+
       &--green {
         @include card-gradient-background(vars.$green-light, vars.$green-dark)
       }
+
       &--blue {
         @include card-gradient-background(vars.$blue-light, vars.$blue-medium)
+      }
+    }
+  }
+
+  // FRONT SIDE STYLING
+  &__picture {
+    height: 45%;
+    background-size: cover;
+    background-blend-mode: screen;
+    clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+
+    &--1 {
+      background-image: url("../img/nat-5.jpg"),
+      linear-gradient(to right bottom, vars.$orange-light, vars.$orange-medium);
+    }
+
+    &--2 {
+      background-image: url("../img/nat-6.jpg"),
+      linear-gradient(to right bottom, vars.$green-light, vars.$green-medium);
+    }
+
+    &--3 {
+      background-image: url("../img/nat-7.jpg"),
+      linear-gradient(to right bottom, vars.$blue-light, vars.$blue-medium);
+    }
+  }
+
+  // BEM doesn't like nested elements, even if they share name.
+  &__heading {
+    position: absolute;
+    top: 25%;
+    right: 5%;
+    color: vars.$white;
+    font-size: 2.8rem;
+    font-weight: 300;
+    text-align: right;
+    text-transform: uppercase;
+    width: 75%;
+  }
+
+  &__heading-span {
+    padding: 1rem 1.5rem;
+    -webkit-box-decoration-break: clone;
+    box-decoration-break: clone;
+
+    &--orange {
+      background-image: linear-gradient(to right bottom, rgba(vars.$orange-light, .85), rgba(vars.$orange-medium, .85));
+    }
+
+    &--green {
+      background-image: linear-gradient(to right bottom, rgba(vars.$green-light, .85), rgba(vars.$green-medium, .85));
+    }
+
+    &--blue {
+      background-image: linear-gradient(to right bottom, rgba(vars.$blue-light, .85), rgba(vars.$blue-medium, .85));
+    }
+  }
+
+  &__details {
+    width: 70%;
+    margin: 2.5rem auto 0 auto;
+
+    ul {
+      list-style: none;
+
+      li {
+        text-align: center;
+        font-size: 1.5rem;
+        padding: 1rem;
+
+        &:not(:last-of-type) {
+          border-bottom: 1px solid rgba(vars.$black, .05);
+        }
       }
     }
   }
