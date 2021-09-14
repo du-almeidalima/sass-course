@@ -35,10 +35,6 @@
     // So the image doesn't overflow the rounded corner
     overflow: hidden;
 
-    &--front {
-      // TODO Create Front
-    }
-
     &--back {
       background-color: darkseagreen;
       transform: rotateY(-180deg);
@@ -128,5 +124,30 @@
         }
       }
     }
+  }
+
+  // BACK SIDE STYLING
+  &__cta {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: max-content;
+  }
+
+  &__price-box {
+    text-align: center;
+    color: vars.$white;
+    margin-bottom: 5rem;
+  }
+
+  &__price-title {
+    font-size: 1.4rem;
+    text-transform: uppercase;
+  }
+
+  &__price-value {
+    font-size: 6rem;
+    font-weight: 100;
   }
 }

@@ -44,6 +44,13 @@
 .btn--white::after {
   background-color: #FFF;
 }
+.btn--green {
+  background-color: #28b485;
+  color: white;
+}
+.btn--green::after {
+  background-color: #55c57a;
+}
 .btn--animated {
   animation: appear 1.5s ease-in 0.5s;
   /* This property applies the values of 0% before the animation is played*/
@@ -218,6 +225,26 @@
 }
 .card__details ul li:not(:last-of-type) {
   border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+.card__cta {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: max-content;
+}
+.card__price-box {
+  text-align: center;
+  color: white;
+  margin-bottom: 5rem;
+}
+.card__price-title {
+  font-size: 1.4rem;
+  text-transform: uppercase;
+}
+.card__price-value {
+  font-size: 6rem;
+  font-weight: 100;
 }
 
 /*
@@ -656,7 +683,7 @@ body {
 }
 
 .section-tours {
-  padding: 25rem 0 50rem 0;
+  padding: 25rem 0 15rem 0;
   margin-top: -10rem;
   background-color: #f7f7f7;
 }

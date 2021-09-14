@@ -53,6 +53,15 @@
     }
   }
 
+  &--green {
+    background-color: vars.$green-dark;
+    color: vars.$white;
+
+    &::after {
+      background-color: vars.$green-medium;
+    }
+  }
+
   &--animated {
     animation: appear 1.5s ease-in 0.5s;
     /* This property applies the values of 0% before the animation is played*/
