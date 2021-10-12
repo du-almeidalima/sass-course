@@ -13,11 +13,12 @@
     position: absolute;
     width: 55%;
     box-shadow: 0 1.5rem 4rem rgba(vars.$black, .4);
-    transition: 100ms transform ease-out;
+    outline: 1rem solid transparent;
+    outline-offset: 1rem;
+    transition: transform 100ms ease-out, outline-color 300ms ease-in 100ms;
 
     &:hover {
-      outline: 1rem solid vars.$green-light;
-      outline-offset: 1rem;
+      outline-color: vars.$green-light;
       transform: scale(1.1);
       box-shadow: 1rem 1.5rem 6rem rgba(vars.$black, .4);
       z-index: 4;
@@ -38,5 +39,9 @@
       top: 12rem;
       z-index: 3;
     }
+  }
+
+  @keyframes outlineAppear {
+
   }
 }

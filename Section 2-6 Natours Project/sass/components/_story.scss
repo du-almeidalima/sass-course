@@ -1,0 +1,40 @@
+@use '../abstract/variables' as vars;
+
+.story {
+  $skew-angle: 12deg;
+  $padding: 6rem;
+  $avatar-left-offset: 3rem;
+
+  font-size: vars.$default-font-size;
+  width: 75%;
+  padding: $padding $padding $padding ($padding + $avatar-left-offset);
+  margin: 0 auto;
+  box-shadow: 0 3rem 6rem rgba(vars.$black, .3);
+  border-radius: 3px;
+  transform: skewX(-$skew-angle);
+
+  & > * {
+    transform: skewX($skew-angle);
+  }
+
+  &__image-shape {
+    $shape: circle(50% at 50% 50%);
+
+    width: 15rem;
+    height: 15rem;
+    float: left;
+    // This property allow us to define a way/shape for the inline text to wrap around this element. Needs to be a
+    // floated element with a width and height.
+    shape-outside: $shape;
+    clip-path: $shape;
+    background-color: tomato;
+
+    // Currently, there is no way to apply multiple transform in different selectors to a same element
+    transform: translateX(-3rem) skewX($skew-angle);
+  }
+
+  &__image {
+    width: 100%;
+    height: 100%;
+  }
+}
