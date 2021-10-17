@@ -5,12 +5,13 @@
   $padding: 6rem;
   $avatar-left-offset: 3rem;
 
-  font-size: vars.$default-font-size;
   width: 75%;
   padding: $padding $padding $padding ($padding + $avatar-left-offset);
   margin: 0 auto;
-  box-shadow: 0 3rem 6rem rgba(vars.$black, .3);
   border-radius: 3px;
+  background-color: rgba(vars.$white, 0.6);
+  box-shadow: 0 3rem 6rem rgba(vars.$black, .3);
+  font-size: vars.$default-font-size;
   transform: skewX(-$skew-angle);
 
   &:hover &__image-caption {
