@@ -8,16 +8,18 @@
     margin-bottom: 2rem;
   }
 
+  // TEXT/EMAIL... INPUT
   &__input {
     display: block;
     font-size: $control-font-size;
     font-family: inherit;
     color: inherit;
+    width: 100%;
     padding: 1.5rem $control-offset;
     border: none;
     border-bottom: 3px solid transparent;
     border-radius: 2px;
-    background-color: rgba(vars.$white, .5);
+    background-color: rgba(vars.$white, .8);
     outline: none;
     transition: all 300ms;
 
@@ -40,6 +42,7 @@
     display: block;
     font-size: 1.2rem;
     font-weight: bold;
+    height: $control-font-size;
     margin-left: $control-offset;
     transition: all 300ms ease-out;
     transform: translateY(0);
@@ -52,5 +55,54 @@
     opacity: 0;
     visibility: hidden;
     transform: translateY(-4rem);
+  }
+
+  // RADIO INPUT
+  &__radio-group {
+    display: inline-block;
+    // https://css-tricks.com/fighting-the-space-between-inline-block-elements/
+    width: 49%;
+
+    & > * {
+      vertical-align: middle;
+    }
+  }
+
+  &__radio-label {
+    font-size: vars.$default-font-size;
+    cursor: pointer;
+    margin: auto 0 auto 1rem;
+  }
+
+  &__radio-input[type="radio"] {
+    $size: 3rem;
+
+    position: relative;
+    width: $size;
+    height: $size;
+    border: 5px solid vars.$green-medium;
+    border-radius: 50%;
+    // This disables the default browser styling
+    appearance: none;
+    cursor: pointer;
+
+    // Inside Check Indicator (initially hidden)
+    &:after {
+      position: absolute;
+      // Short hand for top, right, bottom, left properties
+      inset: 3px;
+      content: '';
+      border-radius: 50%;
+      background-color: transparent;
+      transition: background-color 300ms ease-out;
+      visibility: hidden;
+    }
+
+    &:checked {
+      &:after {
+        visibility: visible;
+        background-color: vars.$green-medium;
+      }
+    }
   }
 }

@@ -43,7 +43,6 @@
 }
 
 .book {
-  height: 50rem;
   background-size: cover;
   background-repeat: no-repeat;
   background-image:
@@ -59,6 +58,6 @@
 
   &__form {
     width: 50%;
-    padding: 6rem;
+    padding: 6rem 6rem 3rem;
   }
 }

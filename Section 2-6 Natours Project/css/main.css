@@ -3,10 +3,13 @@
  */
 .btn {
   position: relative;
-  padding: 1.5rem 4rem;
   font-size: 1.6rem;
+  text-transform: uppercase;
+  padding: 1.25rem 3rem;
+  border: none;
   border-radius: 10rem;
   transition: all 150ms ease-out;
+  cursor: pointer;
 }
 .btn::after {
   position: absolute;
@@ -33,7 +36,6 @@
   box-shadow: 0 0.2rem 1rem rgba(0, 0, 0, 0.2);
 }
 .btn:link, .btn:visited {
-  text-transform: uppercase;
   text-decoration: none;
   display: inline-block;
 }
@@ -45,7 +47,7 @@
   background-color: #FFF;
 }
 .btn--green {
-  background-color: #28b485;
+  background-color: #55c57a;
   color: white;
 }
 .btn--green::after {
@@ -341,11 +343,12 @@
   font-size: 1.5rem;
   font-family: inherit;
   color: inherit;
+  width: 100%;
   padding: 1.5rem 2rem;
   border: none;
   border-bottom: 3px solid transparent;
   border-radius: 2px;
-  background-color: rgba(255, 255, 255, 0.5);
+  background-color: rgba(255, 255, 255, 0.8);
   outline: none;
   transition: all 300ms;
 }
@@ -364,6 +367,7 @@
   display: block;
   font-size: 1.2rem;
   font-weight: bold;
+  height: 1.5rem;
   margin-left: 2rem;
   transition: all 300ms ease-out;
   transform: translateY(0);
@@ -374,6 +378,40 @@
   opacity: 0;
   visibility: hidden;
   transform: translateY(-4rem);
+}
+.form__radio-group {
+  display: inline-block;
+  width: 49%;
+}
+.form__radio-group > * {
+  vertical-align: middle;
+}
+.form__radio-label {
+  font-size: 1.6rem;
+  cursor: pointer;
+  margin: auto 0 auto 1rem;
+}
+.form__radio-input[type=radio] {
+  position: relative;
+  width: 3rem;
+  height: 3rem;
+  border: 5px solid #55c57a;
+  border-radius: 50%;
+  appearance: none;
+  cursor: pointer;
+}
+.form__radio-input[type=radio]:after {
+  position: absolute;
+  inset: 3px;
+  content: "";
+  border-radius: 50%;
+  background-color: transparent;
+  transition: background-color 300ms ease-out;
+  visibility: hidden;
+}
+.form__radio-input[type=radio]:checked:after {
+  visibility: visible;
+  background-color: #55c57a;
 }
 
 /*
@@ -828,7 +866,6 @@ body {
 }
 
 .book {
-  height: 50rem;
   background-size: cover;
   background-repeat: no-repeat;
   background-image: linear-gradient(105deg, rgba(255, 255, 255, 0.8) 0% 49.9%, transparent 50%), url("../img/nat-10.jpg");
@@ -841,7 +878,7 @@ body {
 }
 .book__form {
   width: 50%;
-  padding: 6rem;
+  padding: 6rem 6rem 3rem;
 }
 
 /*
