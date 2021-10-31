@@ -1,4 +1,5 @@
 @use '../abstract/variables' as vars;
+@use "sass:math";
 
 .navigation {
   $btn-size: 7rem;
@@ -25,7 +26,7 @@
   &__hamburger-icon {
     position: relative;
     display: inline-block;
-    margin-top: $btn-size / 2;
+    margin-top: math.div($btn-size, 2);
 
     &,
     &::before,

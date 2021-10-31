@@ -2,6 +2,14 @@
   text-align: center;
 }
 
+.u-float-right {
+  float: right;
+}
+
+.u-float-left {
+  float: left;
+}
+
 @for $spacing from 1 through 10 {
   .u-margin-#{$spacing} {
     margin: $spacing * 1rem
