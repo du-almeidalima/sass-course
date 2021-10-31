@@ -162,7 +162,7 @@
   perspective: 150rem;
   -moz-perspective: 150rem;
 }
-.card:hover .card__perspective {
+.card:is(:hover, :focus-within) .card__perspective {
   transform: rotateY(180deg);
 }
 .card__perspective {
@@ -592,15 +592,66 @@
 }
 
 .navigation__checkbox {
+  display: none;
+}
+.navigation__menu-button {
   position: fixed;
   top: 6rem;
   right: 6rem;
   width: 7rem;
   height: 7rem;
   border-radius: 50%;
-  appearance: none;
+  text-align: center;
   background-color: white;
-  z-index: 1001;
+  box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  z-index: 1002;
+}
+.navigation__hamburger-icon {
+  position: relative;
+  display: inline-block;
+  margin-top: 3.5rem;
+}
+.navigation__hamburger-icon, .navigation__hamburger-icon::before, .navigation__hamburger-icon:after {
+  width: 3rem;
+  height: 2px;
+  background-color: #333333;
+  transition: 0.25s ease-out;
+}
+.navigation__hamburger-icon::before, .navigation__hamburger-icon:after {
+  position: absolute;
+  content: "";
+  left: 0;
+}
+.navigation__hamburger-icon::before {
+  top: -1rem;
+}
+.navigation__hamburger-icon::after {
+  top: 1rem;
+}
+.navigation__menu-button:hover .navigation__hamburger-icon::before {
+  top: -1.5rem;
+}
+.navigation__menu-button:hover .navigation__hamburger-icon::after {
+  top: 1.5rem;
+}
+.navigation__checkbox:checked ~ .navigation__background {
+  transform: scale(80);
+}
+.navigation__checkbox:checked ~ .navigation__nav {
+  opacity: 1;
+  visibility: visible;
+}
+.navigation__checkbox:checked ~ .navigation__menu-button .navigation__hamburger-icon {
+  background-color: transparent;
+}
+.navigation__checkbox:checked ~ .navigation__menu-button .navigation__hamburger-icon::before {
+  top: 0;
+  transform: rotate(135deg);
+}
+.navigation__checkbox:checked ~ .navigation__menu-button .navigation__hamburger-icon::after {
+  top: 0;
+  transform: rotate(-135deg);
 }
 .navigation__background {
   position: fixed;
@@ -610,8 +661,8 @@
   height: 6rem;
   border-radius: 50%;
   background-image: radial-gradient(#7ed56f 1%, #28b485);
+  transition: transform 0.8s cubic-bezier(0.86, 0, 0.07, 1);
   z-index: 1000;
-  transform: scale(80);
 }
 .navigation__nav {
   position: fixed;
@@ -619,7 +670,10 @@
   left: 0;
   height: 100vh;
   width: 100vw;
-  z-index: 1002;
+  opacity: 0;
+  visibility: hidden;
+  z-index: 1001;
+  transition: opacity 0.3s linear 0.5s;
 }
 .navigation__list {
   width: 40vw;

@@ -11,7 +11,7 @@
   perspective: 150rem;
   -moz-perspective: 150rem;
 
-  &:hover &__perspective {
+  &:is(:hover, :focus-within) &__perspective {
     transform: rotateY(180deg);
   }
 

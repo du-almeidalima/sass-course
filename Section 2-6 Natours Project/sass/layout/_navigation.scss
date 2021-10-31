@@ -5,16 +5,59 @@
   $background-transition-time: .75s;
 
   &__checkbox {
+    display: none;
+  }
+
+  &__menu-button {
     position: fixed;
     top: 6rem;
     right: 6rem;
     width: $btn-size;
     height: $btn-size;
     border-radius: 50%;
-    appearance: none;
+    text-align: center;
     background-color: vars.$white;
     box-shadow: 0 1rem 3rem rgba(vars.$black, .1);
+    cursor: pointer;
     z-index: 1002;
+  }
+
+  &__hamburger-icon {
+    position: relative;
+    display: inline-block;
+    margin-top: $btn-size / 2;
+
+    &,
+    &::before,
+    &:after {
+      width: 3rem;
+      height: 2px;
+      background-color: vars.$gray-darker;
+      transition: .25s ease-out;
+    }
+
+    &::before,
+    &:after {
+      position: absolute;
+      content: '';
+      left: 0;
+    }
+
+    &::before {
+      top: -1rem;
+    }
+    &::after {
+      top: 1rem;
+    }
+  }
+
+  &__menu-button:hover &__hamburger-icon {
+    &::before {
+      top: -1.5rem;
+    }
+    &::after {
+      top: 1.5rem;
+    }
   }
 
   &__checkbox:checked ~ &__background {
@@ -24,6 +67,19 @@
   &__checkbox:checked ~ &__nav {
     opacity: 1;
     visibility: visible;
+  }
+
+  &__checkbox:checked ~ &__menu-button &__hamburger-icon {
+    background-color: transparent;
+
+    &::before {
+      top: 0;
+      transform: rotate(135deg);
+    }
+    &::after {
+      top: 0;
+      transform: rotate(-135deg);
+    }
   }
 
   &__background {
