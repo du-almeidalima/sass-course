@@ -25,7 +25,7 @@
 
   // Using Sass @for
 
-  @for $cols from 1 through 6 {
+  @for $cols from 1 through 8 {
     @for $col from 1 through $cols {
 
       @if $col != $cols {

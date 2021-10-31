@@ -1,0 +1,58 @@
+@use "../abstract/variables" as vars;
+
+.footer {
+  font-size: 1.4rem;
+  padding: 10rem 0;
+  background-color: vars.$gray;
+  color: vars.$gray-light-2;
+
+  &__logo-box {
+    text-align: center;
+    margin-bottom: 8rem;
+  }
+
+  &__logo {
+    height: auto;
+    width: 15rem;
+  }
+
+  &__navigation {
+    display: inline-block;
+    border-top: 1px solid vars.$gray-light-1;
+  }
+
+  &__list {
+    list-style: none;
+  }
+
+  &__item {
+    display: inline-block;
+
+    &:not(:last-child) {
+      margin-right: 1.5rem;
+    }
+  }
+
+  &__link {
+    &:link, &:visited {
+      display: inline-block;
+      padding: 1rem 0;
+      color: vars.$gray-light-1;
+      text-decoration: none;
+      text-transform: uppercase;
+      transition: all 200ms;
+      background-color: vars.$gray;
+    }
+
+    &:hover, &:active {
+      color: vars.$green-light;
+      box-shadow: 0 1rem 2rem rgba(vars.$black, .6);
+      transform: rotate(5deg) scale(1.2);
+    }
+  }
+
+  &__copyright {
+    width: 100%;
+    border-top: 1px solid vars.$gray-light-1;
+  }
+}

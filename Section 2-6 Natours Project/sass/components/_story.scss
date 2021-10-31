@@ -43,6 +43,8 @@
 
     // Currently, there is no way to apply multiple transform in different selectors to a same element
     transform: translateX(-3rem) skewX($skew-angle);
+    // This fixes a line around the image when hovered and blur on text for Chrome
+    overflow: hidden;
   }
 
   &__image {
