@@ -1,0 +1,196 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>CSS/SASS Course Projects</title>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700&display=swap');
+
+      *,
+      *::after,
+      *::before {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      :root {
+        --white-font: #C9D1D9FF;
+      }
+
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --font-color: #C9D1D9FF;
+          --body-bg-color: #0D1117FF;
+        }
+      }
+
+      @media (prefers-color-scheme: light) {
+        :root {
+          --font-color: rgba(0, 0, 0, .75);
+          --body-bg-color: #eeeeee;
+        }
+      }
+
+      html {
+        font-size: 62.5%;
+      }
+
+      body {
+        font-family: 'Lato', sans-serif;
+        color: var(--font-color);
+        background-color: var(--body-bg-color);
+      }
+
+      .container {
+        margin: 10rem auto;
+        padding: 5rem;
+        text-align: center;
+      }
+
+      @media screen and (min-width: 768px) {
+        .container {
+          width: 90%;
+        }
+      }
+
+      @media screen and (min-width: 1200px) {
+        .container {
+          width: 50%;
+        }
+      }
+
+      .title {
+        font-size: 5rem;
+        font-weight: normal;
+        margin-bottom: 3rem;
+      }
+
+      .subtitle {
+        font-size: 1.4rem;
+      }
+
+      .subtitle a {
+        color: inherit;
+        font-weight: bold;
+      }
+
+      .projects-section {
+        margin-top: 10rem;
+      }
+
+      .project {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(4, 1fr);
+        width: 100%;
+        color: var(--white-font);
+        aspect-ratio: 16 / 9;
+        overflow: hidden;
+      }
+
+      .project__image {
+        grid-row: 1 / -1;
+        grid-column: 1 / -1;
+        width: 100%;
+        height: 100%;
+      }
+
+      .project__content {
+        display: flex;
+        flex-flow: column;
+        justify-content: flex-end;
+        grid-column: 1 / -1;
+        grid-row: 3 / -1;
+        padding: 2rem 2rem 3rem 2rem;
+        text-align: start;
+        background-image: linear-gradient(
+            to top,
+            rgba(0, 0, 0, .9) 0%,
+            rgba(0, 0, 0, .75) 45%,
+            transparent
+        );
+      }
+
+      .project__title {
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+      }
+
+      .project__title > a {
+        color: inherit;
+        text-underline-offset: .25rem;
+      }
+
+      .project__description {
+        font-size: 1.4rem;
+      }
+
+      .project__visit-link-drawer {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        grid-row: 1 / -1;
+        grid-column: 4 / -1;
+        transform: translateX(100%);
+        transition: .4s ease-out;
+      }
+
+      .project__visit-link {
+        --size: 6rem;
+
+        font-family: Arial, sans-serif;
+        display: inline-block;
+        height: var(--size);
+        width: var(--size);
+        background-color: white;
+        border-radius: 50%;
+        text-decoration: none;
+        font-size: 3rem;
+        line-height: var(--size);
+        color: darkgray;
+        transform: scale(0);
+        transition: .4s ease-out;
+      }
+
+      .project:hover > .project__visit-link-drawer {
+        transform: scale(1) translateX(0);
+      }
+
+      .project:hover .project__visit-link {
+        transform: scale(1);
+      }
+
+    </style>
+</head>
+<body>
+<main class="container">
+    <h1 class="title">Check out my course projects!</h1>
+
+    <p class="subtitle">The design of those projects are credited to <a target="_blank" href="https://twitter.com/jonasschmedtman">Jonas
+        Schmedtmann</a>
+    </p>
+
+    <section class="projects-section">
+        <div class="project">
+            <img class="project__image" src="./img/natours.jpg" alt="Natours Project">
+            <div class="project__content">
+                <h2 class="project__title">
+                    <a href="./section-2_6-natours-project">Natours</a>
+                </h2>
+                <p class="project__description">
+                    A Nature tour themed project, exploring the bases of SCSS with BEM and 7x1 architecture.
+                    It uses a component design and a grid system built with float.
+                </p>
+            </div>
+            <div class="project__visit-link-drawer">
+                <a class="project__visit-link" href="./section-2_6-natours-project">&rarr;</a>
+            </div>
+        </div>
+    </section>
+</main>
+</body>
+</html>
