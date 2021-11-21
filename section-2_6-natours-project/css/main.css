@@ -132,6 +132,20 @@
 }
 @keyframes outlineAppear {}
 
+/*
+  0 - 600px - Mobile Phone
+  600 - 900px - Tablet Portrait
+  900 - 1200px - Tablet Landscape
+  1200 - 1800px - Desktop (normal styles)
+  1800px - *  - Big Desktop
+ */
+/**
+ $breakpoint:
+ - phone
+ - tab-port
+ - tab-lan
+ - big-desktop
+ */
 .feature-box {
   padding: 3rem 2rem;
   height: 30rem;
@@ -834,6 +848,21 @@
 
 html {
   font-size: 62.5%;
+}
+@media (max-width: 1200px) {
+  html {
+    font-size: 56.25%;
+  }
+}
+@media (max-width: 900px) {
+  html {
+    font-size: 50%;
+  }
+}
+@media (min-width: 1800px) {
+  html {
+    font-size: 75%;
+  }
 }
 
 body {
