@@ -1,4 +1,5 @@
 @use '../abstract/variables' as vars;
+@use "../abstract/mixins" as mixins;
 @use "sass:math";
 
 .navigation {
@@ -21,6 +22,16 @@
     box-shadow: 0 1rem 3rem rgba(vars.$black, .1);
     cursor: pointer;
     z-index: 1002;
+
+    @include mixins.respond(tab-port) {
+      top: 4rem;
+      right: 4rem;
+    }
+
+    @include mixins.respond(phone) {
+      top: 3rem;
+      right: 3rem;
+    }
   }
 
   &__hamburger-icon {
@@ -93,6 +104,16 @@
     background-image: radial-gradient(vars.$green-light 1%, vars.$green-dark);
     transition: transform .8s cubic-bezier(0.86, 0, 0.07, 1);
     z-index: 1000;
+
+    @include mixins.respond(tab-port) {
+      top: 4.5rem;
+      right: 4.5rem;
+    }
+
+    @include mixins.respond(phone) {
+      top: 3.5rem;
+      right: 3.5rem;
+    }
   }
 
   &__nav {
@@ -114,6 +135,10 @@
     text-align: center;
     counter-reset: linksCounter;
     list-style: none;
+
+    @include mixins.respond(tab-port) {
+      width: 80vw;
+    }
   }
 
   &__item {

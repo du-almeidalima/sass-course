@@ -25,4 +25,8 @@ html {
 
 body {
   padding: 3rem;
+
+  @include mixins.respond(tab-port) {
+    padding: 0;
+  }
 }

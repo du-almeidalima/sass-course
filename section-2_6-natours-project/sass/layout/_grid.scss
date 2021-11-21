@@ -7,8 +7,17 @@
 
   @include mixins.clearfix;
 
+  @include mixins.respond(tab-port) {
+    max-width: 50rem;
+    padding: 0 3rem;
+  }
+
   &:not(:last-of-type) {
     margin-bottom: vars.$grid-vertical-gutter;
+
+    @include mixins.respond(tab-port) {
+      margin-bottom: vars.$grid-vertical-gutter-small;
+    }
   }
 
   // COLUMNS
@@ -18,8 +27,18 @@
   // - "$" for 'ends with'
   [class^="col-"] {
     float: left;
+
     &:not(:last-of-type) {
       margin-right: vars.$grid-horizontal-gutter;
+
+      @include mixins.respond(tab-port) {
+        margin-right: 0;
+        margin-bottom: vars.$grid-vertical-gutter-small;
+      }
+    }
+
+    @include mixins.respond(tab-port) {
+      width: 100% !important;
     }
   }
 

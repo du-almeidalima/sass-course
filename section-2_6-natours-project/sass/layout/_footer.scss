@@ -1,10 +1,16 @@
 @use "../abstract/variables" as vars;
+@use "../abstract/mixins" as mixins;
 
 .footer {
   font-size: 1.4rem;
   padding: 10rem 0;
   background-color: vars.$gray;
   color: vars.$gray-light-2;
+
+  @include mixins.respond(tab-port) {
+    padding: 8rem 0;
+  }
+
 
   &__logo-box {
     text-align: center;
@@ -19,6 +25,12 @@
   &__navigation {
     display: inline-block;
     border-top: 1px solid vars.$gray-light-1;
+    width: 85%;
+
+    @include mixins.respond(tab-port) {
+      width: 100%;
+      text-align: center;
+    }
   }
 
   &__list {
@@ -52,7 +64,12 @@
   }
 
   &__copyright {
-    width: 100%;
+    width: 85%;
     border-top: 1px solid vars.$gray-light-1;
+    float: right;
+
+    @include mixins.respond(tab-port) {
+      width: 100%;
+    }
   }
 }

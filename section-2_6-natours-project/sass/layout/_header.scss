@@ -1,4 +1,5 @@
 @use '../abstract/variables' as vars;
+@use "../abstract/mixins" as mixins;
 
 /*
   =================== HEADING COMPONENT ======================
@@ -15,6 +16,10 @@
   background-size: cover;
   background-position: center;
   clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+
+  @include mixins.respond(phone) {
+    clip-path: polygon(0 0, 100% 0, 100% 85vh, 0 100%);
+  }
 
   // LOGO
   &__logo-box {
