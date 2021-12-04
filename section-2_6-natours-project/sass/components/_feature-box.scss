@@ -1,5 +1,5 @@
 @use "../abstract/variables" as vars;
-@use "../abstract/mixins" as *;
+@use '../abstract/mixins' as mixins;
 
 .feature-box {
   padding: 3rem 2rem;
@@ -16,13 +16,16 @@
     transform: translateY(-1.5rem) scale(1.05);
   }
 
+  @include mixins.respond(tab-port) {
+    padding: 2rem;
+  }
+
   &__icon {
     display: block;
     font-size: 6rem;
     margin-bottom: 2rem;
 
-    @include gradient-background;
-
+    @include mixins.gradient-background;
   }
 
   &__description {

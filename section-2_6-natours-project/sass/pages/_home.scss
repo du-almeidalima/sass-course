@@ -1,10 +1,15 @@
 @use '../abstract/variables' as vars;
+@use '../abstract/mixins' as mixins;
 
 .section-about {
   background-color: vars.$gray-light-1;
   padding: 25rem 0;
   // Heading 90vh - 75vh
   margin-top: -15vh;
+
+  @include mixins.respond(tab-port) {
+    padding: 12.5rem 0 20rem 0;
+  }
 }
 
 .section-features {
@@ -23,23 +28,38 @@
   & > * {
     transform: skewY($skew-amount);
   }
+
+  @include mixins.respond(tab-port) {
+    padding: 10rem 0;
+  }
 }
 
 .section-tours {
   padding: 25rem 0 15rem 0;
   margin-top: -10rem;
   background-color: vars.$gray-light-1;
+
+  @include mixins.respond(tab-port) {
+    padding: 15rem 0 10rem 0;
+  }
 }
 
 .section-stories {
   position: relative;
   padding: 15rem 0;
+
+  @include mixins.respond(tab-port) {
+    padding: 10rem 0;
+  }
 }
 
 .section-book {
   padding: 15rem 0;
   background-image: linear-gradient(to right bottom, vars.$green-light, vars.$green-dark);
 
+  @include mixins.respond(tab-port) {
+    padding: 10rem 0;
+  }
 }
 
 .book {
