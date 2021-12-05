@@ -228,7 +228,6 @@
   overflow: hidden;
 }
 .card__side--back {
-  background-color: darkseagreen;
   transform: rotateY(-180deg);
 }
 .card__side--back--orange {
@@ -316,6 +315,47 @@
   font-size: 6rem;
   font-weight: 100;
 }
+@media (max-width: 900px) {
+  .card {
+    height: auto;
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.15);
+  }
+  .card__perspective {
+    position: static;
+    transition: none;
+    transform-style: initial;
+  }
+  .card__side {
+    position: relative;
+    height: auto;
+    border-radius: initial;
+    box-shadow: none;
+  }
+  .card__side--back {
+    transform: none;
+    clip-path: polygon(0 15%, 100% 0, 100% 100%, 0 100%);
+  }
+  .card__picture {
+    height: 25rem;
+  }
+  .card__cta {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+    padding: 5rem 0;
+    transform: none;
+  }
+  .card__price-box {
+    margin-bottom: 3rem;
+  }
+  .card__price-value {
+    font-size: 4rem;
+  }
+}
 
 .story {
   width: 75%;
@@ -366,6 +406,23 @@
   color: white;
   text-align: center;
   text-transform: uppercase;
+}
+@media (max-width: 900px) {
+  .story {
+    width: 100%;
+    padding: 4rem 4rem 4rem 7rem;
+  }
+}
+@media (max-width: 600px) {
+  .story {
+    transform: initial;
+  }
+  .story > * {
+    transform: skewX(0);
+  }
+  .story__image-shape {
+    transform: translateX(-3rem) skewX(0);
+  }
 }
 
 .bg-video {
@@ -434,10 +491,20 @@
 .form__radio-group > * {
   vertical-align: middle;
 }
+@media (max-width: 600px) {
+  .form__radio-group {
+    width: 100%;
+  }
+  .form__radio-group:last-child {
+    margin-top: 1rem;
+  }
+}
 .form__radio-label {
+  display: inline-block;
+  margin: auto 0 auto 1rem;
+  height: 100%;
   font-size: 1.6rem;
   cursor: pointer;
-  margin: auto 0 auto 1rem;
 }
 .form__radio-input[type=radio] {
   position: relative;
@@ -454,7 +521,7 @@
   content: "";
   border-radius: 50%;
   background-color: transparent;
-  transition: background-color 300ms ease-out;
+  transition: background-color 300ms ease-out, visibility 300ms ease-out;
   visibility: hidden;
 }
 .form__radio-input[type=radio]:checked:after {
@@ -1350,6 +1417,32 @@ body {
 .book__form {
   width: 50%;
   padding: 6rem 6rem 3rem;
+}
+@media (max-width: 1200px) {
+  .book {
+    background-image: linear-gradient(105deg, rgba(255, 255, 255, 0.8) 0% 64.9%, transparent 65%), url("../img/nat-10.jpg");
+  }
+  @supports (-moz-appearance: none) {
+    .book {
+      background-image: linear-gradient(105deg, rgba(255, 255, 255, 0.8) 0% 64.8%, transparent 65%), url("../img/nat-10.jpg");
+    }
+  }
+  .book__form {
+    width: 65%;
+  }
+}
+@media (max-width: 900px) {
+  .book {
+    background-image: linear-gradient(to right, rgba(255, 255, 255, 0.8) 0%, rgba(255, 255, 255, 0.8) 100%), url("../img/nat-10.jpg");
+  }
+  .book__form {
+    width: 100%;
+  }
+}
+@media (max-width: 600px) {
+  .book__form {
+    padding: 3rem;
+  }
 }
 
 /*

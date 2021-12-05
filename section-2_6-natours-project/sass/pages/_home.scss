@@ -80,4 +80,42 @@
     width: 50%;
     padding: 6rem 6rem 3rem;
   }
+
+  // TABLET LANDSCAPE VERSION
+  @include mixins.respond(tab-land) {
+    background-image:
+            linear-gradient(105deg, rgba(vars.$white, .8) 0% 64.9%, transparent 65%),
+            url("../img/nat-10.jpg");
+    @supports (-moz-appearance:none) {
+      background-image:
+              linear-gradient(105deg, rgba(vars.$white, .8) 0% 64.8%, transparent 65%),
+              url("../img/nat-10.jpg");
+    }
+
+    &__form {
+      width: 65%;
+    }
+  }
+
+  // TABLET PORTRAIT VERSION
+  @include mixins.respond(tab-port) {
+    background-image:
+            linear-gradient(
+                            to right,
+                            rgba(vars.$white, .8) 0%,
+                            rgba(vars.$white, .8) 100%
+            ),
+            url("../img/nat-10.jpg");
+
+    &__form {
+      width: 100%;
+    }
+  }
+
+  // PHONE VERSION
+  @include mixins.respond(phone) {
+    &__form {
+      padding: 3rem;
+    }
+  }
 }

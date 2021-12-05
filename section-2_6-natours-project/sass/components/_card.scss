@@ -1,4 +1,5 @@
 @use '../abstract/variables' as vars;
+@use '../abstract/mixins' as mixins;
 
 @mixin card-gradient-background($start-color, $end-color) {
   background-image: linear-gradient(to right bottom, $start-color, $end-color);
@@ -6,6 +7,7 @@
 
 .card {
   $card-height: 55rem;
+  $border-radius: 5px;
 
   height: $card-height;
   perspective: 150rem;
@@ -30,13 +32,12 @@
     width: 100%;
     height: $card-height;
     backface-visibility: hidden;
-    border-radius: 5px;
+    border-radius: $border-radius;
     box-shadow: 0 1.5rem 4rem rgba(vars.$black, .15);
     // So the image doesn't overflow the rounded corner
     overflow: hidden;
 
     &--back {
-      background-color: darkseagreen;
       transform: rotateY(-180deg);
 
       &--orange {
@@ -150,5 +151,57 @@
   &__price-value {
     font-size: 6rem;
     font-weight: 100;
+  }
+
+  // MOBILE VERSION
+  @include mixins.respond(tab-port) {
+    & {
+      height: auto;
+      border-radius: $border-radius;
+      overflow: hidden;
+      box-shadow: 0 1.5rem 4rem rgba(vars.$black, .15);
+
+      &__perspective {
+        position: static;
+        transition: none;
+        transform-style: initial;
+      }
+
+      &__side {
+        position: relative;
+        height: auto;
+        border-radius: initial;
+        box-shadow: none;
+
+        &--back {
+          transform: none;
+          clip-path: polygon(0 15%, 100% 0, 100% 100%, 0 100%);
+        }
+      }
+
+      // FRONT SIDE STYLING
+      &__picture {
+        height: 25rem;
+      }
+
+      // BACK SIDE STYLING
+      &__cta {
+        position: relative;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: auto;
+        padding: 5rem 0;
+        transform: none;
+      }
+
+      &__price-box {
+        margin-bottom: 3rem;
+      }
+
+      &__price-value {
+        font-size: 4rem;
+      }
+    }
   }
 }
