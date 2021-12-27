@@ -322,6 +322,9 @@
     overflow: hidden;
     box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.15);
   }
+  .card:is(:hover, :focus-within) .card__perspective {
+    transform: initial;
+  }
   .card__perspective {
     position: static;
     transition: none;

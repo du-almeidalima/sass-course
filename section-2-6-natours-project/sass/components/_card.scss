@@ -161,6 +161,10 @@
       overflow: hidden;
       box-shadow: 0 1.5rem 4rem rgba(vars.$black, .15);
 
+      &:is(:hover, :focus-within) &__perspective {
+        transform: initial;
+      }
+
       &__perspective {
         position: static;
         transition: none;

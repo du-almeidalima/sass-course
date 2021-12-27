@@ -43,7 +43,8 @@
         </h1>
 
         <!-- Button Component -->
-        <a href="#tours" id="button" class="btn btn--white btn--animated" style="margin-top: 50px">Discover our tours</a>
+        <a href="#tours" id="button" class="btn btn--white btn--animated" style="margin-top: 50px">Discover our
+            tours</a>
     </div>
 </header>
 <main>
@@ -311,7 +312,21 @@
 </main>
 <footer class="footer">
     <div class="footer__logo-box">
-        <img class="footer__logo" src="img/logo-green-2x.png" alt="Big Logo">
+        <!--
+            Art Direction: When another image should be served e.g. a cropped version of a bigger image.
+            For this, the picture tag is useful, because you can provide sources with conditions (medias) to serve the
+            right image for a given condition.
+            https://developer.mozilla.org/en-US/docs/Learn/HTML/Multimedia_and_embedding/Responsive_images#art_direction
+         -->
+        <picture class="footer__logo">
+            <!-- Phone Viewport -->
+            <source srcset="img/logo-green-small-1x.png 1x, img/logo-green-small-2x.png 2x" media="(max-width: 37.5em)">
+            <!--
+               Density Switcher: Serving an image based on the screen pixel density. For higher density display, it will
+               serve a higher density image (Higher resolutions screens use 2 physical pixels to display one)
+            -->
+            <img src="img/logo-green-1x.png" srcset="img/logo-green-1x.png 1x, img/logo-green-2x.png 2x" alt="Big Logo">
+        </picture>
     </div>
     <div class="row">
         <div class="col-1-of-2">
