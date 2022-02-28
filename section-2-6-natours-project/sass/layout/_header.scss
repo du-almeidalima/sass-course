@@ -1,5 +1,5 @@
 @use '../abstract/variables' as vars;
-@use "../abstract/mixins" as mixins;
+@use '../abstract/mixins' as mixins;
 
 /*
   =================== HEADING COMPONENT ======================
@@ -12,13 +12,23 @@
                   rgba(vars.$green-light, 0.8),
                   rgba(vars.$green-dark, 0.8)
   ),
-  url('../img/hero.jpg');
+  url('../img/hero-small.jpg');
   background-size: cover;
   background-position: center;
   clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
 
   @include mixins.respond(phone) {
     clip-path: polygon(0 0, 100% 0, 100% 85vh, 0 100%);
+  }
+
+  // CSS Responsive Images Density Switching
+  @media (min-resolution: 192dpi) and (min-width: 37.5em), (min-width: 125em) {
+    background-image: linear-gradient(
+                    to right bottom,
+                    rgba(vars.$green-light, 0.8),
+                    rgba(vars.$green-dark, 0.8)
+    ),
+    url('../img/hero.jpg');
   }
 
   // LOGO
