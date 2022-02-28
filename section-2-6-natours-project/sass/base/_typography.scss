@@ -59,17 +59,23 @@ body {
   transition: all 200ms;
   @include gradient-background;
 
+  &:hover {
+    transform: skewY(2deg) skewX(15deg);
+    text-shadow: .5rem 1rem 2rem rgba(vars.$black, .2);
+  }
+
   @include respond(tab-port) {
     font-size: 3rem;
   }
 
-  @include respond(tab-port) {
+  @include respond(phone) {
+    padding-inline: 1rem;
     font-size: 2.5rem;
-  }
 
-  &:hover {
-    transform: skewY(2deg) skewX(15deg);
-    text-shadow: .5rem 1rem 2rem rgba(vars.$black, .2);
+    &:hover {
+      transform: none;
+      text-shadow: none;
+    }
   }
 }
 

@@ -72,9 +72,55 @@
             <div class="col-1-of-2">
                 <!-- Composition Component -->
                 <div class="composition">
-                    <img class="composition__photo composition__photo--p1" src="img/nat-1-large.jpg" alt="Photo 1">
-                    <img class="composition__photo composition__photo--p2" src="img/nat-2-large.jpg" alt="Photo 2">
-                    <img class="composition__photo composition__photo--p3" src="img/nat-3-large.jpg" alt="Photo 3">
+                    <!--
+                        Resolution Switching: The srcset attribute provides a list of images accompanied by their width
+                        in w units.
+
+                        Each file is separated by a comma. The sizes attribute is used for stating the
+                        conditions to apply for selecting the image from the list provided by srcset. The browser will
+                        select the first matching condition.
+
+                        So the ordering should be from smaller to larger files.
+                        The image file closely matching the slot will be selected. The srcset is supported by modern
+                        browsers.
+
+                        For older browsers, the src attribute acts as a fallback mechanism. Older browsers
+                        display the image in the src attribute while newer ones will select the appropriate one from the
+                        srcset attribute.
+                        https://developer.mozilla.org/en-US/docs/Learn/HTML/Multimedia_and_embedding/Responsive_images#resolution_switching_same_size_different_resolutions
+
+                        Quick note about this project, in order to get the nat-x-large pictures working a higher
+                        resolution is needed, if the resolution is 1x the browser will always choose the nat-x.jpg.
+                        However, if it's higher, it'll choose the larger option.
+                     -->
+                    <!-- The order of srcset rules matters -->
+                    <img srcset="img/nat-1.jpg 300w,
+                                 img/nat-1-large.jpg 1000w"
+                         sizes="(max-width: 900px) 20vw,
+                                (max-width: 600px) 30vw,
+                                300px"
+                         src="img/nat-1-large.jpg"
+                         alt="Photo 1"
+                         class="composition__photo composition__photo--p1"
+                    >
+                    <img srcset="img/nat-2.jpg 300w,
+                                 img/nat-2-large.jpg 1000w"
+                         sizes="(max-width: 900px) 20vw,
+                                (max-width: 600px) 30vw,
+                                300px"
+                         src="img/nat-2-large.jpg"
+                         alt="Photo 2"
+                         class="composition__photo composition__photo--p2"
+                    >
+                    <img srcset="img/nat-3.jpg 300w,
+                                 img/nat-3-large.jpg 1000w"
+                         sizes="(max-width: 900px) 20vw,
+                                (max-width: 600px) 30vw,
+                                300px"
+                         src="img/nat-3-large.jpg"
+                         alt="Photo 3"
+                         class="composition__photo composition__photo--p3"
+                    >
                 </div>
             </div>
         </div>
@@ -243,7 +289,12 @@
         <div class="row u-margin-top-5">
             <div class="story">
                 <figure class="story__image-shape">
-                    <img class="story__image" src="img/nat-8.jpg" alt="Person on a Tour">
+                    <img class="story__image"
+                         srcset="img/nat-8-small.webp 500w, img/nat-8.jpg 2000w"
+                         sizes="(max-width: 1200px) 350px, 2000px"
+                         src="img/nat-8.jpg"
+                         alt="Person on a Tour"
+                    >
                     <figcaption class="story__image-caption">Mary Smith</figcaption>
                 </figure>
                 <div class="story__text">
@@ -257,7 +308,12 @@
             </div>
             <div class="story u-margin-top-5">
                 <figure class="story__image-shape">
-                    <img class="story__image" src="img/nat-9.jpg" alt="Person on a Tour">
+                    <img class="story__image"
+                         srcset="img/nat-9-small.webp 500w, img/nat-9.jpg 2000w"
+                         sizes="(max-width: 1200px) 350px, 2000px"
+                         src="img/nat-9.jpg"
+                         alt="Person on a Mountain"
+                    >
                     <figcaption class="story__image-caption">Alfredo Chan</figcaption>
                 </figure>
                 <div class="story__text">
@@ -352,8 +408,16 @@
     <div class="popup__content">
         <a href="#tours" class="popup__close-btn">&times;</a>
         <div class="popup__left">
-            <img class="popup__img" src="img/nat-8.jpg" alt="Tour Photo 1">
-            <img class="popup__img" src="img/nat-9.jpg" alt="Tour Photo 2">
+            <img class="popup__img"
+                 srcset="img/nat-8-small.webp 500w, img/nat-8.jpg 2000w"
+                 sizes="(max-width: 1200px) 350px, 2000px"
+                 src="img/nat-8.jpg"
+                 alt="Tour Photo 1">
+            <img class="popup__img"
+                 srcset="img/nat-9-small.webp 500w, img/nat-9.jpg 2000w"
+                 sizes="(max-width: 1200px) 350px, 2000px"
+                 src="img/nat-9.jpg"
+                 alt="Tour Photo 2">
         </div>
         <div class="popup__right">
             <h2 class="heading-secondary">Start Booking Now!</h2>
