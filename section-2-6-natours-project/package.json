@@ -1,15 +1,23 @@
 {
   "name": "natours",
   "version": "1.0.0",
-  "description": "",
+  "description": "Project to practice SASS. Build workflow: 'compile:sass' -> concat:sass (take many files and bundles into one) -> prefix:css (uses the postcss cli with the autoprefixer plugin) -> compress:css (use sass to compress and minify the css)",
   "main": "index.js",
   "scripts": {
-    "sass": "sass -w sass/main.scss css/main.css",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "watch:sass": "sass -w sass/main.scss css/main.css",
+    "compile:sass": "sass sass/main.scss css/main.comp.css",
+    "concat:css": "concat -o css/style.concat.css css/vendor/linea/styles.css css/main.comp.css",
+    "prefix:css": "postcss --use autoprefixer -b 'last 10 versions' css/style.concat.css -o css/style.prefix.css",
+    "compress:css": "sass css/style.prefix.css css/style.css --style compressed",
+    "build:css": "npm-run-all compile:sass concat:css prefix:css compress:css"
   },
   "author": "Eduardo Lima",
   "license": "UNLICENSED",
   "devDependencies": {
+    "autoprefixer": "^10.4.2",
+    "concat": "^1.0.3",
+    "npm-run-all": "^4.1.5",
+    "postcss-cli": "^9.1.0",
     "sass": "^1.38.1"
   }
 }
