@@ -1,3 +1,17 @@
+.header {
+  height: 100%;
+  background-color: #fff;
+  border-bottom: #f4f2f2;
+}
+
+.sidebar {
+  background-color: #333;
+}
+
+.content {
+  background-color: #fff;
+}
+
 *,
 *::before,
 *::after {
@@ -18,6 +32,30 @@ body {
   background-image: linear-gradient(to right bottom, #eb2f64, #BA265D);
   background-repeat: no-repeat;
   min-height: 100vh;
+}
+
+.layout {
+  display: flex;
+  flex-flow: column;
+  max-width: 120rem;
+  min-height: 50rem;
+  margin: 8rem auto;
+  background-color: #f4f2f2;
+  box-shadow: 0 2rem 6rem rgba(0, 0, 0, 0.3);
+}
+.layout__header-slot {
+  flex: 0 0 7rem;
+}
+.layout__container {
+  flex: 1;
+  display: flex;
+  flex-flow: row nowrap;
+}
+.layout__sidenav-slot {
+  flex: 0 0 20%;
+}
+.layout__content-slot {
+  flex: 1;
 }
 
 /*

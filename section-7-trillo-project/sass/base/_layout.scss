@@ -1,0 +1,29 @@
+@use "../abstract/variables";
+
+.layout {
+  display: flex;
+  flex-flow: column;
+  max-width: 120rem;
+  min-height: 50rem;
+  margin: 8rem auto;
+  background-color: variables.$grey-light-2;
+  box-shadow: variables.$shadow-dark;
+
+  &__header-slot {
+    flex: 0 0 7rem;
+  }
+
+  &__container {
+    flex: 1;
+    display: flex;
+    flex-flow: row nowrap;
+  }
+
+  &__sidenav-slot {
+    flex: 0 0 20%;
+  }
+
+  &__content-slot {
+    flex: 1;
+  }
+}

@@ -1,0 +1,7 @@
+@use "../abstract/variables";
+
+.header {
+  height: 100%;
+  background-color: #fff;
+  border-bottom: variables.$grey-light-2;
+}
