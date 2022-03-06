@@ -1,0 +1,18 @@
+@use "../abstract/variables";
+
+.search {
+  display: flex;
+
+  &__input {
+
+  }
+
+  &__button {
+
+  }
+
+  &__icon {
+    height: 2rem;
+    width: 2rem;
+  }
+}
