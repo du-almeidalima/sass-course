@@ -1,11 +1,26 @@
 @use "../abstract/variables";
 
 .header {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+
   height: 100%;
+
   background-color: #fff;
   border-bottom: variables.$grey-light-2;
 
   &__logo {
+    margin-left: 3rem;
     height: 3.25rem;
+  }
+
+  &__search-slot {
+    flex: 0 0 40%;
+  }
+
+  &__user-nav-slot {
+
   }
 }

@@ -1,6 +1,7 @@
 @use "../abstract/variables";
 
 .user-nav {
+  display: flex;
 
   &__icon-box {}
 
