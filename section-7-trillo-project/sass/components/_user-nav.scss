@@ -2,22 +2,61 @@
 
 .user-nav {
   display: flex;
+  align-items: stretch;
 
-  &__icon-box {}
+  &__icon-box, &__user {
+    display: flex;
+    align-items: center;
+
+    padding: 0 2rem;
+
+    cursor: pointer;
+
+    &:hover {
+      background-color: variables.$grey-light-2;
+    }
+  }
+
+  &__icon-box {
+    position: relative;
+  }
 
   &__icon {
     width: 2.25rem;
     height: 2.25rem;
+
+    fill: variables.$grey-dark-2;
   }
 
-  &__notification-badge {}
+  &__notification-badge {
+    $size: 1.75rem;
 
-  &__user {}
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    position: absolute;
+    top: 1.5rem;
+    right: 1.2rem;
+
+    width: $size;
+    height: $size;
+    border-radius: 50%;
+
+    font-size: .8rem;
+    font-weight: bold;
+    color: #fff;
+
+    background-color: variables.$pink-dark;
+  }
 
   &__user-photo {
     height: 3.75rem;
+    margin-right: 1rem;
     border-radius: 50%;
   }
 
-  &__user-name {}
+  &__user-name {
+    font-size: 1.2rem;
+  }
 }

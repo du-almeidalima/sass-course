@@ -4,16 +4,23 @@
   justify-content: space-between;
   align-items: center;
   height: 100%;
+  padding: 0 2rem 0 3rem;
   background-color: #fff;
   border-bottom: #f4f2f2;
 }
 .header__logo {
-  margin-left: 3rem;
   height: 3.25rem;
 }
 .header__search-slot {
   flex: 0 0 40%;
 }
+.header__user-nav-slot {
+  align-self: stretch;
+}
+.header__user-nav-slot > * {
+  height: 100%;
+}
+
 .sidebar {
   background-color: #333;
 }
@@ -69,15 +76,49 @@
 
 .user-nav {
   display: flex;
+  align-items: stretch;
+}
+.user-nav__icon-box, .user-nav__user {
+  display: flex;
+  align-items: center;
+  padding: 0 2rem;
+  cursor: pointer;
+}
+.user-nav__icon-box:hover, .user-nav__user:hover {
+  background-color: #f4f2f2;
+}
+.user-nav__icon-box {
+  position: relative;
 }
 .user-nav__icon {
   width: 2.25rem;
   height: 2.25rem;
+  fill: #777;
+}
+.user-nav__notification-badge {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 1.5rem;
+  right: 1.2rem;
+  width: 1.75rem;
+  height: 1.75rem;
+  border-radius: 50%;
+  font-size: 0.8rem;
+  font-weight: bold;
+  color: #fff;
+  background-color: #BA265D;
 }
 .user-nav__user-photo {
   height: 3.75rem;
+  margin-right: 1rem;
   border-radius: 50%;
 }
+.user-nav__user-name {
+  font-size: 1.2rem;
+}
+
 *,
 *::before,
 *::after {
