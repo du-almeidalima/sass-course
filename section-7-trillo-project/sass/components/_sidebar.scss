@@ -1,5 +1,86 @@
 @use "../abstract/variables";
 
 .sidebar {
-  background-color: variables.$grey-dark-1;
+  margin-top: 3.5rem;
+
+  font-size: 1.4rem;
+
+  &__link-list {
+    list-style: none;
+  }
+
+  &__item {
+    position: relative;
+
+    &:not(:last-child) {
+      margin-bottom: .75rem;
+    }
+  }
+
+  // HOVER EFFECT
+  &__item::before {
+    $scaleY-transition-time: .2s;
+    $width-transition-time: .4s;
+
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    height: 100%;
+    width: 5px;
+
+    transition:
+            transform $scaleY-transition-time,
+            width $width-transition-time cubic-bezier(1, 0, 0, 1) $scaleY-transition-time,
+            background-color .2s;
+    transform: scaleY(0);
+    transform-origin: left;
+
+    background-color: variables.$pink-dark;
+  }
+
+  &__item:hover::before,
+  :is(#home, #flight, #car-rental, #tours):target::before {
+    // At the moment, I couldn't find a way to add a transition to both
+    // scaleY and scaleX individually
+    transform: scaleY(1);
+    width: 100%;
+  }
+
+  &__item:active::before {
+    background-color: variables.$pink-light;
+  }
+
+  &__link {
+    z-index: 1;
+
+    position: relative;
+
+    display: flex;
+    align-items: center;
+
+    padding: 2rem 3rem;
+
+    color: variables.$font-white;
+    text-decoration: none;
+    text-transform: uppercase;
+  }
+
+  &__link-icon {
+    $size: 2rem;
+    width: $size;
+    height: $size;
+    margin-right: 3rem;
+
+    fill: currentColor;
+  }
+}
+
+.legal {
+  padding: 2.5rem;
+
+  font-size: 1.2rem;
+  text-align: center;
+  color: variables.$grey-light-4;
 }

@@ -4,7 +4,7 @@
   justify-content: space-between;
   align-items: center;
   height: 100%;
-  padding: 0 2rem 0 3rem;
+  padding: 0 0 0 3rem;
   background-color: #fff;
   border-bottom: #f4f2f2;
 }
@@ -22,7 +22,60 @@
 }
 
 .sidebar {
-  background-color: #333;
+  margin-top: 3.5rem;
+  font-size: 1.4rem;
+}
+.sidebar__link-list {
+  list-style: none;
+}
+.sidebar__item {
+  position: relative;
+}
+.sidebar__item:not(:last-child) {
+  margin-bottom: 0.75rem;
+}
+.sidebar__item::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 5px;
+  transition: transform 0.2s, width 0.4s cubic-bezier(1, 0, 0, 1) 0.2s, background-color 0.2s;
+  transform: scaleY(0);
+  transform-origin: left;
+  background-color: #BA265D;
+}
+.sidebar__item:hover::before,
+.sidebar :is(#home, #flight, #car-rental, #tours):target::before {
+  transform: scaleY(1);
+  width: 100%;
+}
+.sidebar__item:active::before {
+  background-color: #FF3366;
+}
+.sidebar__link {
+  z-index: 1;
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 2rem 3rem;
+  color: #fff;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+.sidebar__link-icon {
+  width: 2rem;
+  height: 2rem;
+  margin-right: 3rem;
+  fill: currentColor;
+}
+
+.legal {
+  padding: 2.5rem;
+  font-size: 1.2rem;
+  text-align: center;
+  color: #ccc;
 }
 
 .content {
@@ -160,6 +213,10 @@ body {
 }
 .layout__sidenav-slot {
   flex: 0 0 20%;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-between;
+  background-color: #333;
 }
 .layout__content-slot {
   flex: 1;

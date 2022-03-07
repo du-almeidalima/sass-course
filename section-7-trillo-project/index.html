@@ -10,7 +10,7 @@
 
     <title>trillo &mdash; Your all-in-one booking app</title>
 </head>
-<body>
+<body onload="window.history.replaceState(null, 'Trillo Homepage', './#home')">
 <div class="layout">
     <div class="layout__header-slot">
         <!-- HEADER -->
@@ -57,9 +57,46 @@
     </div>
     <div class="layout__container">
         <div class="layout__sidenav-slot">
+            <!-- SIDE NAV -->
             <nav class="sidebar">
-                Navigation
+                <ul class="sidebar__link-list">
+                    <li class="sidebar__item" id="home">
+                        <a href="#home" class="sidebar__link">
+                            <svg class="sidebar__link-icon" aria-hidden="true">
+                                <use href="img/sprite.svg#icon-home"></use>
+                            </svg>
+                            <span>Hotel</span>
+                        </a>
+                    </li>
+                    <li class="sidebar__item" id="flight">
+                        <a href="#flight" class="sidebar__link">
+                            <svg class="sidebar__link-icon" aria-hidden="true">
+                                <use href="img/sprite.svg#icon-airplanemode_on"></use>
+                            </svg>
+                            <span>Flight</span>
+                        </a>
+                    </li>
+                    <li class="sidebar__item" id="car-rental">
+                        <a href="#car-rental" class="sidebar__link">
+                            <svg class="sidebar__link-icon" aria-hidden="true">
+                                <use href="img/sprite.svg#icon-vpn_key"></use>
+                            </svg>
+                            <span>Car Rental</span>
+                        </a>
+                    </li>
+                    <li class="sidebar__item" id="tours">
+                        <a href="#tours" class="sidebar__link">
+                            <svg class="sidebar__link-icon" aria-hidden="true">
+                                <use href="img/sprite.svg#icon-map"></use>
+                            </svg>
+                            <span>Tours</span>
+                        </a>
+                    </li>
+                </ul>
             </nav>
+            <div class="legal">
+                &copy; 2022 by Trillo. All rights reserved
+            </div>
         </div>
         <div class="layout__content-slot">
             <main class="content">
