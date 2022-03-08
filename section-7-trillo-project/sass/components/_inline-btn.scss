@@ -1,0 +1,20 @@
+@use "../abstract/variables";
+
+.inline-button {
+  display: inline-block;
+
+  border: none;
+  border-bottom: 1px solid currentColor;
+
+  font-size: inherit;
+  color: variables.$pink;
+
+  background-color: transparent;
+  cursor: pointer;
+
+  transition: all .2s;
+
+  &:hover {
+    color: variables.$grey-dark-1;
+  }
+}

@@ -1,0 +1,10 @@
+@use "../abstract/variables";
+
+.gallery {
+  display: flex;
+
+  &__photo {
+    display: block;
+    width: 100%;
+  }
+}
