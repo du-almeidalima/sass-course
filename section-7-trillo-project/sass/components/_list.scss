@@ -1,0 +1,38 @@
+@use "../abstract/variables";
+
+.list {
+  display: flex;
+  flex-flow: row wrap;
+
+  padding: 3rem 0;
+  margin: 3rem 0;
+  border-top: variables.$divider-border;
+  border-bottom: variables.$divider-border;
+
+  list-style: none;
+
+  &__item {
+    flex: 0 0 50%;
+
+    padding-left: 1rem;
+  }
+
+  &__item::before {
+    $size: 1rem;
+
+    display: inline-block;
+    content: '';
+
+    width: $size;
+    height: $size;
+    margin-right: .75rem;
+
+    background-color: variables.$pink;
+    mask: url("../img/chevron-thin-right.svg");
+    mask-size: cover;
+
+    // Older Browsers
+    //background-image: url("../img/chevron-thin-right.svg");
+    //background-size: cover;
+  }
+}

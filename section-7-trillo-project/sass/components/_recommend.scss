@@ -1,0 +1,35 @@
+@use "../abstract/variables";
+
+.recommend {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  gap: 3rem;
+  font-size: 1.3rem;
+  color: variables.$grey-dark-2;
+
+  &__count {
+    margin-right: auto;
+  }
+
+  &__friends {
+
+    display: flex;
+    flex-flow: row nowrap;
+  }
+
+  &__photo {
+    $size: 4rem;
+
+    box-sizing: content-box;
+
+    width: $size;
+    height: $size;
+    border-radius: 50%;
+    border: 3px solid variables.$font-white;
+
+    &:not(:last-of-type) {
+      margin-right: -1rem;
+    }
+  }
+}

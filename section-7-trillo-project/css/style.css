@@ -243,6 +243,56 @@
   color: #333;
 }
 
+.list {
+  display: flex;
+  flex-flow: row wrap;
+  padding: 3rem 0;
+  margin: 3rem 0;
+  border-top: 1px solid #f4f2f2;
+  border-bottom: 1px solid #f4f2f2;
+  list-style: none;
+}
+.list__item {
+  flex: 0 0 50%;
+  padding-left: 1rem;
+}
+.list__item::before {
+  display: inline-block;
+  content: "";
+  width: 1rem;
+  height: 1rem;
+  margin-right: 0.75rem;
+  background-color: #eb2f64;
+  mask: url("../img/chevron-thin-right.svg");
+  mask-size: cover;
+}
+
+.recommend {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  gap: 3rem;
+  font-size: 1.3rem;
+  color: #777;
+}
+.recommend__count {
+  margin-right: auto;
+}
+.recommend__friends {
+  display: flex;
+  flex-flow: row nowrap;
+}
+.recommend__photo {
+  box-sizing: content-box;
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50%;
+  border: 3px solid #fff;
+}
+.recommend__photo:not(:last-of-type) {
+  margin-right: -1rem;
+}
+
 *,
 *::before,
 *::after {
@@ -291,6 +341,27 @@ body {
 }
 .layout__content-slot {
   flex: 1;
+}
+.layout__detail {
+  display: flex;
+  gap: 4.5rem;
+  padding: 4.5rem;
+  background-color: #faf9f9;
+}
+.layout__detail-description {
+  flex: 0 0 60%;
+  padding: 3rem;
+  font-size: 1.4rem;
+  background-color: #fff;
+  box-shadow: 0 2rem 5rem rgba(0, 0, 0, 0.06);
+}
+.layout__detail-user-reviews {
+  flex: 1;
+  background-color: yellowgreen;
+}
+
+.paragraph:not(:last-of-type) {
+  margin-bottom: 2rem;
 }
 
 /*

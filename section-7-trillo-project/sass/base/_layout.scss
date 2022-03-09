@@ -32,4 +32,34 @@
   &__content-slot {
     flex: 1;
   }
+
+  &__detail {
+    display: flex;
+    gap: 4.5rem;
+
+    padding: 4.5rem;
+
+    background-color: variables.$grey-light-1;
+  }
+
+  &__detail-description {
+    flex: 0 0 60%;
+
+    padding: 3rem;
+
+    font-size: 1.4rem;
+
+    background-color: variables.$font-white;
+    box-shadow: variables.$shadow-light;
+  }
+
+  &__detail-user-reviews {
+    flex: 1;
+
+    background-color: yellowgreen;
+  }
+}
+
+.paragraph:not(:last-of-type) {
+  margin-bottom: 2rem;
 }
