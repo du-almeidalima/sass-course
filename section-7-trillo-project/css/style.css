@@ -1,3 +1,4 @@
+@charset "UTF-8";
 .header {
   display: flex;
   flex-flow: row nowrap;
@@ -293,6 +294,62 @@
   margin-right: -1rem;
 }
 
+.review {
+  flex: 1;
+  position: relative;
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 2.5rem;
+  padding: 3rem;
+  background-color: #fff;
+  box-shadow: 0 2rem 5rem rgba(0, 0, 0, 0.06);
+}
+.review::before {
+  z-index: 1;
+  content: "“";
+  position: absolute;
+  top: -2rem;
+  left: 0;
+  font-family: sans-serif;
+  font-size: 19rem;
+  line-height: 1;
+  color: #f0eeee;
+}
+.review__text {
+  z-index: 2;
+  font-weight: 500;
+}
+.review__rating {
+  margin-left: auto;
+  font-size: 2.5rem;
+  color: #eb2f64;
+}
+.review__photo {
+  width: 5rem;
+  height: 5rem;
+  border-radius: 50%;
+}
+.review__user {
+  display: flex;
+  flex-flow: row nowrap;
+  gap: 1.5rem;
+  align-items: center;
+}
+.review__user-box {
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 0.25rem;
+}
+.review__user-name {
+  font-size: 1.1rem;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+.review__user-date {
+  font-size: 1.1rem;
+  color: #999;
+}
+
 *,
 *::before,
 *::after {
@@ -346,18 +403,20 @@ body {
   display: flex;
   gap: 4.5rem;
   padding: 4.5rem;
+  font-size: 1.4rem;
   background-color: #faf9f9;
 }
 .layout__detail-description {
   flex: 0 0 60%;
   padding: 3rem;
-  font-size: 1.4rem;
   background-color: #fff;
   box-shadow: 0 2rem 5rem rgba(0, 0, 0, 0.06);
 }
 .layout__detail-user-reviews {
   flex: 1;
-  background-color: yellowgreen;
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 3.5rem;
 }
 
 .paragraph:not(:last-of-type) {
