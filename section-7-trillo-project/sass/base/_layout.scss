@@ -59,6 +59,10 @@
     display: flex;
     flex-flow: column nowrap;
     gap: 3.5rem;
+
+    .inline-button {
+      align-self: center;
+    }
   }
 }
 

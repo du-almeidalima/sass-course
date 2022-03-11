@@ -238,10 +238,17 @@
   color: #eb2f64;
   background-color: transparent;
   cursor: pointer;
-  transition: all 0.2s;
+  transition: all 200ms;
+}
+.inline-button span {
+  margin-left: 5px;
+  transition: margin-left 200ms;
 }
 .inline-button:hover {
   color: #333;
+}
+.inline-button:hover span {
+  margin-left: 10px;
 }
 
 .list {
@@ -417,6 +424,9 @@ body {
   display: flex;
   flex-flow: column nowrap;
   gap: 3.5rem;
+}
+.layout__detail-user-reviews .inline-button {
+  align-self: center;
 }
 
 .paragraph:not(:last-of-type) {
