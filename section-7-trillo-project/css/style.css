@@ -47,12 +47,11 @@
   transform-origin: left;
   background-color: #BA265D;
 }
-.sidebar__item:hover::before,
-.sidebar :is(#home, #flight, #car-rental, #tours):target::before {
+.sidebar__item:hover::before, .sidebar__item--active::before {
   transform: scaleY(1);
   width: 100%;
 }
-.sidebar__item:active::before {
+:is(.sidebar__item:active, .sidebar__item--active)::before {
   background-color: #FF3366;
 }
 .sidebar__link {
@@ -60,6 +59,7 @@
   position: relative;
   display: flex;
   align-items: center;
+  height: 100%;
   padding: 2rem 3rem;
   color: #fff;
   text-decoration: none;
@@ -355,6 +355,57 @@
 .review__user-date {
   font-size: 1.1rem;
   color: #999;
+}
+
+.cta {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  gap: 3rem;
+  padding: 3.5rem 0;
+  text-align: center;
+}
+.cta__book-now {
+  font-size: 2rem;
+  font-weight: 300;
+  text-transform: uppercase;
+}
+
+.button {
+  position: relative;
+  border-radius: 25px;
+  border: none;
+  background-image: linear-gradient(to right, #FF3366, #BA265D);
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  text-align: center;
+  color: #fff;
+  cursor: pointer;
+  overflow: hidden;
+  transition: all 0.35s ease-out;
+  transition-property: top, transform, background-image;
+}
+.button__hover-text, .button__initial-text {
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  padding: 1.5rem 3rem;
+  transition: inherit;
+}
+.button__hover-text {
+  position: absolute;
+  top: -100%;
+  left: 0;
+}
+.button:hover {
+  background-image: linear-gradient(to left, #FF3366, #BA265D);
+}
+.button:hover .button__hover-text {
+  top: 50%;
+  transform: translateY(-50%);
+}
+.button:hover .button__initial-text {
+  transform: translateY(100%);
 }
 
 *,

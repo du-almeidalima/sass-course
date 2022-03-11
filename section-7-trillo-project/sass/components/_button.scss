@@ -1,0 +1,51 @@
+@use "../abstract/variables";
+
+.button {
+  position: relative;
+
+  border-radius: 25px;
+  border: none;
+
+  background-image: linear-gradient(to right, variables.$pink-light, variables.$pink-dark);
+
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  text-align: center;
+  color: variables.$font-white;
+
+  cursor: pointer;
+  overflow: hidden;
+
+  transition: all .35s ease-out;
+  transition-property: top, transform, background-image;
+
+  &__hover-text,
+  &__initial-text {
+    display: inline-block;
+
+    width: 100%;
+    height: 100%;
+    padding: 1.5rem 3rem;
+
+    transition: inherit;
+  }
+
+  &__hover-text {
+    position: absolute;
+    top: -100%;
+    left: 0;
+  }
+
+  &:hover {
+    background-image: linear-gradient(to left, variables.$pink-light, variables.$pink-dark);
+  }
+
+  &:hover &__hover-text {
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  &:hover &__initial-text {
+    transform: translateY(100%);
+  }
+}

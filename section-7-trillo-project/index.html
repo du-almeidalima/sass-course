@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="shortcut icon" type="image/png" href="img/favicon.png">
 
+    <script src="app.js" defer="defer"></script>
     <title>trillo &mdash; Your all-in-one booking app</title>
 </head>
 <body onload="window.history.replaceState(null, 'Trillo Homepage', './#home')">
@@ -60,32 +61,32 @@
             <!-- SIDE NAV -->
             <nav class="sidebar">
                 <ul class="sidebar__link-list">
-                    <li class="sidebar__item" id="home">
-                        <a href="#home" class="sidebar__link">
+                    <li class="sidebar__item sidebar__item--active">
+                        <a class="sidebar__link" href="#home">
                             <svg class="sidebar__link-icon" aria-hidden="true">
                                 <use href="img/sprite.svg#icon-home"></use>
                             </svg>
                             <span>Hotel</span>
                         </a>
                     </li>
-                    <li class="sidebar__item" id="flight">
-                        <a href="#flight" class="sidebar__link">
+                    <li class="sidebar__item">
+                        <a class="sidebar__link" href="#flight">
                             <svg class="sidebar__link-icon" aria-hidden="true">
                                 <use href="img/sprite.svg#icon-airplanemode_on"></use>
                             </svg>
                             <span>Flight</span>
                         </a>
                     </li>
-                    <li class="sidebar__item" id="car-rental">
-                        <a href="#car-rental" class="sidebar__link">
+                    <li class="sidebar__item">
+                        <a class="sidebar__link" href="#car-rental">
                             <svg class="sidebar__link-icon" aria-hidden="true">
                                 <use href="img/sprite.svg#icon-vpn_key"></use>
                             </svg>
                             <span>Car Rental</span>
                         </a>
                     </li>
-                    <li class="sidebar__item" id="tours">
-                        <a href="#tours" class="sidebar__link">
+                    <li class="sidebar__item">
+                        <a class="sidebar__link" href="#tours">
                             <svg class="sidebar__link-icon" aria-hidden="true">
                                 <use href="img/sprite.svg#icon-map"></use>
                             </svg>
@@ -162,6 +163,7 @@
                             <li class="list__item">Mild Weather</li>
                             <li class="list__item">Perfect for families</li>
                         </ul>
+                        <!-- RECOMMEND -->
                         <div class="recommend">
                             <p class="recommend__count">
                                 Beatriz and 3 other friends recommend this hotel.
@@ -208,6 +210,16 @@
 
                         <button class="inline-button">Show all <span>&rarr;</span></button>
                     </div>
+                </section>
+                <!-- CALL TO ACTION -->
+                <section class="cta">
+                    <h2 class="cta__book-now">
+                        Book now to get a 25% discount and free beers!
+                    </h2>
+                    <button class="button">
+                        <span class="button__hover-text">Book now!</span>
+                        <span class="button__initial-text">Only 4 rooms left!</span>
+                    </button>
                 </section>
             </main>
         </div>

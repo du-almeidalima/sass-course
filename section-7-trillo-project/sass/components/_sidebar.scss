@@ -41,14 +41,14 @@
   }
 
   &__item:hover::before,
-  :is(#home, #flight, #car-rental, #tours):target::before {
+  &__item--active::before {
     // At the moment, I couldn't find a way to add a transition to both
     // scaleY and scaleX individually
     transform: scaleY(1);
     width: 100%;
   }
 
-  &__item:active::before {
+  :is(&__item:active,  &__item--active)::before {
     background-color: variables.$pink-light;
   }
 
@@ -60,6 +60,7 @@
     display: flex;
     align-items: center;
 
+    height: 100%;
     padding: 2rem 3rem;
 
     color: variables.$font-white;
