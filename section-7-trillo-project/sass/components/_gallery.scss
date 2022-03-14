@@ -1,4 +1,5 @@
 @use "../abstract/variables";
+@use "../abstract/mixins";
 
 .gallery {
   $animation-time: 250ms;
@@ -8,6 +9,7 @@
   cursor: pointer;
 
   &__item {
+    flex: 1;
     position: relative;
 
     overflow: hidden;
@@ -44,7 +46,14 @@
     transform: scaleY(0);
     transform-origin: bottom;
     // One-Way transition delay
-    transition: transform $animation-time ease-out;
+    transition: transform $animation-time ease-out, visibility 0ms linear $animation-time;
+
+    @include mixins.respond(medium-phone) {
+      height: 40%;
+
+      font-size: 1rem;
+    }
+
   }
 
   &__item:hover > &__photo {

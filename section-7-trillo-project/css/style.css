@@ -247,6 +247,7 @@
   cursor: pointer;
 }
 .gallery__item {
+  flex: 1;
   position: relative;
   overflow: hidden;
 }
@@ -271,7 +272,13 @@
   text-transform: uppercase;
   transform: scaleY(0);
   transform-origin: bottom;
-  transition: transform 250ms ease-out;
+  transition: transform 250ms ease-out, visibility 0ms linear 250ms;
+}
+@media only screen and (max-width: 500px) {
+  .gallery__photo-caption {
+    height: 40%;
+    font-size: 1rem;
+  }
 }
 .gallery__item:hover > .gallery__photo {
   transform: scale(1.1);
