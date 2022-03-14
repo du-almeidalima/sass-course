@@ -1,0 +1,35 @@
+@use "variables" as vars;
+
+// MEDIA QUERY MANAGER
+/*
+  0 - 600px - Mobile Phone
+  600 - 900px - Tablet Portrait
+  900 - 1200px - Tablet Landscape
+  1200 - 1800px - Desktop (normal styles)
+  1800px - *  - Big Desktop
+ */
+
+/**
+ $breakpoint:
+ - phone
+ - tab-port
+ - tab-lan
+ - big-desktop
+ */
+@mixin respond($breakpoint) {
+  @if $breakpoint == medium-phone {
+    @media only screen and (max-width: 500px) { @content }
+  }
+  @if $breakpoint == large-phone {
+    @media only screen and (max-width: 600px) { @content }
+  }
+  @if $breakpoint == tab-port {
+    @media only screen and (max-width: 900px) { @content }
+  }
+  @if $breakpoint == tab-land {
+    @media only screen and (max-width: 1200px) { @content }
+  }
+  @if $breakpoint == big-desktop {
+    @media only screen and (min-width: 1800px) { @content }
+  }
+}

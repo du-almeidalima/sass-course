@@ -1,19 +1,37 @@
 @use "../abstract/variables";
+@use "../abstract/mixins";
 
 .sidebar {
   margin-top: 3.5rem;
 
   font-size: 1.4rem;
 
+  @include mixins.respond(tab-port) {
+    margin-top: 0;
+  }
+
   &__link-list {
     list-style: none;
+
+    @include mixins.respond(tab-port) {
+      display: flex;
+      justify-content: stretch;
+    }
   }
 
   &__item {
     position: relative;
 
+    @include mixins.respond(tab-port) {
+      flex: 1;
+    }
+
     &:not(:last-child) {
       margin-bottom: .75rem;
+
+      @include mixins.respond(tab-port) {
+        margin-bottom: 0;
+      }
     }
   }
 
@@ -66,22 +84,42 @@
     color: variables.$font-white;
     text-decoration: none;
     text-transform: uppercase;
+
+    @include mixins.respond(tab-port) {
+      justify-content: center;
+    }
+
+    @include mixins.respond(large-phone) {
+      flex-flow: column nowrap;
+      gap: .75rem;
+
+      padding: 1.5rem .5rem;
+    }
   }
 
   &__link-icon {
     $size: 2rem;
+    $small-size: 1.75rem;
+
     width: $size;
     height: $size;
     margin-right: 3rem;
 
     fill: currentColor;
+
+    @include mixins.respond(large-phone) {
+      width: $small-size;
+      height: $small-size;
+      margin-right: 0;
+    }
   }
-}
 
-.legal {
-  padding: 2.5rem;
+  &__legal-slot {
+    padding: 2.5rem;
+    text-align: center;
 
-  font-size: 1.2rem;
-  text-align: center;
-  color: variables.$grey-light-4;
+    @include mixins.respond(tab-port) {
+      display: none;
+    }
+  }
 }

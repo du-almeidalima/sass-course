@@ -1,4 +1,5 @@
 @use "../abstract/variables";
+@use "../abstract/mixins";
 
 .recommend {
   display: flex;
@@ -8,18 +9,22 @@
   font-size: 1.3rem;
   color: variables.$grey-dark-2;
 
+  @include mixins.respond(medium-phone) {
+    flex-flow: column nowrap;
+  }
+
   &__count {
     margin-right: auto;
   }
 
   &__friends {
-
     display: flex;
     flex-flow: row nowrap;
   }
 
   &__photo {
     $size: 4rem;
+    $bigger-size: 6rem;
 
     box-sizing: content-box;
 
@@ -30,6 +35,15 @@
 
     &:not(:last-of-type) {
       margin-right: -1rem;
+
+      @include mixins.respond(medium-phone) {
+        margin-right: 1rem;
+      }
+    }
+
+    @include mixins.respond(medium-phone) {
+      width: $bigger-size;
+      height: $bigger-size;
     }
   }
 }

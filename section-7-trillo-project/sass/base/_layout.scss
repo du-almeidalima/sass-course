@@ -1,4 +1,5 @@
 @use "../abstract/variables";
+@use "../abstract/mixins";
 
 .layout {
   display: flex;
@@ -9,6 +10,12 @@
   background-color: variables.$grey-light-2;
   box-shadow: variables.$shadow-dark;
 
+  @include mixins.respond(tab-land) {
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+  }
+
   &__header-slot {
     flex: 0 0 7rem;
   }
@@ -17,6 +24,10 @@
     flex: 1;
     display: flex;
     flex-flow: row nowrap;
+
+    @include mixins.respond(tab-port) {
+      flex-flow: column nowrap;
+    }
   }
 
   &__sidenav-slot {
@@ -42,6 +53,16 @@
     font-size: 1.4rem;
 
     background-color: variables.$grey-light-1;
+
+    @include mixins.respond(tab-port) {
+      gap: 3rem;
+
+      padding: 3rem;
+    }
+
+    @include mixins.respond(large-phone) {
+      flex-flow: column nowrap;
+    }
   }
 
   &__detail-description {
@@ -51,6 +72,10 @@
 
     background-color: variables.$font-white;
     box-shadow: variables.$shadow-light;
+
+    @include mixins.respond(tab-port) {
+      padding: 2rem;
+    }
   }
 
   &__detail-user-reviews {
@@ -62,6 +87,20 @@
 
     .inline-button {
       align-self: center;
+    }
+  }
+
+  &__legal-slot {
+    display: none;
+
+    @include mixins.respond(tab-port) {
+      display: block;
+
+      padding: 2rem;
+
+      background-color: variables.$grey-dark-1;
+
+      text-align: center;
     }
   }
 }

@@ -1,4 +1,5 @@
 @use "../abstract/variables";
+@use "../abstract/mixins";
 
 .header {
   display: flex;
@@ -12,12 +13,24 @@
   background-color: #fff;
   border-bottom: variables.$divider-border;
 
+  @include mixins.respond(medium-phone) {
+    flex-wrap: wrap;
+    row-gap: 2rem;
+
+    padding: 1rem 3rem;
+  }
+
   &__logo {
     height: 3.25rem;
   }
 
   &__search-slot {
     flex: 0 0 40%;
+
+    @include mixins.respond(medium-phone) {
+      order: 1;
+      flex: 0 0 100%;
+    }
   }
 
   &__user-nav-slot {

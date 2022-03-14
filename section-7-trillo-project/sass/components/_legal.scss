@@ -1,0 +1,7 @@
+@use "../abstract/variables";
+
+.legal {
+  font-size: 1.2rem;
+  text-align: center;
+  color: variables.$grey-light-4;
+}
