@@ -1,7 +1,7 @@
 {
   "name": "trillo",
   "version": "1.0.0",
-  "description": "Landing page for natours",
+  "description": "Landing page for Trillo",
   "author": "Eduardo Lima",
   "main": "index.js",
   "scripts": {
