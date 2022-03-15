@@ -38,7 +38,7 @@
       }
 
       html {
-        font-size: 62.5%;
+        font-size: 50%;
       }
 
       body {
@@ -54,6 +54,14 @@
       }
 
       @media screen and (min-width: 768px) {
+        html {
+          font-size: 62.5%;
+        }
+
+        .title {
+          font-size: 6rem;
+        }
+
         .container {
           margin-top: 5rem;
           padding: 5rem;
@@ -78,7 +86,7 @@
       }
 
       .subtitle {
-        font-size: 1.4rem;
+        font-size: 1.8rem;
       }
 
       .subtitle a {
@@ -87,7 +95,11 @@
       }
 
       .projects-section {
-        margin-top: 10rem;
+        display: flex;
+        flex-flow: column nowrap;
+        gap: 5rem;
+
+        margin-top: 5rem;
       }
 
       .project {
@@ -185,7 +197,7 @@
 <main class="container">
     <h1 class="title">Check out my course projects!</h1>
 
-    <p class="subtitle">The design of those projects are credited to <a target="_blank" href="https://twitter.com/jonasschmedtman">Jonas
+    <p class="subtitle">The base design of those projects are credited to <a target="_blank" href="https://twitter.com/jonasschmedtman">Jonas
         Schmedtmann</a>
     </p>
 
@@ -199,6 +211,21 @@
                 <p class="project__description">
                     A Nature tour themed project, exploring the bases of SCSS with BEM and 7x1 architecture.
                     It uses a component design and a grid system built with float.
+                </p>
+            </div>
+            <div class="project__visit-link-drawer">
+                <a class="project__visit-link" href="section-2-6-natours-project">&rarr;</a>
+            </div>
+        </div>
+
+        <div class="project">
+            <img class="project__image" src="./img/trillo.png" alt="Trillo Project">
+            <div class="project__content">
+                <h2 class="project__title">
+                    <a href="section-7-trillo-project">Trillo</a>
+                </h2>
+                <p class="project__description">
+                    Trillo is a Hotel booking site that uses Flexbox to structure its content.
                 </p>
             </div>
             <div class="project__visit-link-drawer">
