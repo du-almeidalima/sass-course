@@ -1,0 +1,142 @@
+@use "../abstract/variables";
+@use "../abstract/mixins";
+
+.user-nav-menu {
+  $x-padding: 2.5rem;
+
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 2rem;
+
+  min-width: 300px;
+  max-width: 450px;
+  width: max-content;
+  height: fit-content;
+  padding: 2rem 0;
+
+  background-color: variables.$font-white;
+  box-shadow: variables.$shadow-darkest;
+
+  cursor: initial;
+
+  @include mixins.respond(medium-phone) {
+    width: auto;
+  }
+
+  &--user-menu {
+    min-width: max-content;
+    width: max-content;
+
+    @include mixins.respond(medium-phone) {
+      margin-left: auto;
+    }
+  }
+
+  &__header {
+    padding: 0 $x-padding;
+
+    font-size: 2.75rem;
+    font-weight: 100;
+    letter-spacing: 1px;
+    color: variables.$grey-dark-2;
+  }
+
+  &__search {
+    flex: 1;
+
+    padding: 0 $x-padding;
+  }
+
+  &__divider {
+    align-self: center;
+
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid variables.$grey-light-3;
+  }
+
+  &__items {
+    list-style: none;
+  }
+
+  &__item {
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+    justify-content: flex-start;
+
+    padding: 1rem $x-padding;
+    transition: background-color 100ms linear;
+
+    cursor: pointer;
+
+    &:hover {
+      background-color: variables.$grey-light-3;
+    }
+  }
+
+  &__info-box {
+    align-self: stretch;
+    display: flex;
+    flex-flow: column nowrap;
+
+    margin-right: auto;
+  }
+
+  &__item-photo {
+    $size: 6rem;
+
+    box-sizing: content-box;
+
+    width: $size;
+    height: $size;
+    border-radius: 50%;
+  }
+
+  &__item-icon {
+    $size: 3rem;
+
+    width: $size;
+    height: $size;
+    fill: variables.$grey-dark-2;
+  }
+
+  &__item-icon-name {
+    font-size: 1.4rem;
+  }
+
+  &__item-name {
+    font-size: 1.6rem;
+    line-height: 1;
+    color: variables.$grey-dark-2;
+  }
+
+  &__item-subtext {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+
+    font-size: 1.2rem;
+    color: variables.$grey-dark-3;
+
+    &--message {
+      color: variables.$pink;
+    }
+  }
+
+  &__item-message-unread-mark {
+    $size: 1.25rem;
+
+    flex: 0 0 $size;
+    width: $size;
+    height: $size;
+    border-radius: 50%;
+
+    background-color: variables.$pink;
+  }
+
+  &__show-all-button {
+    align-self: center;
+  }
+}

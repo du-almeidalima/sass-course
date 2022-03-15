@@ -1,10 +1,15 @@
 @use "../abstract/variables";
+@use "../abstract/mixins";
 
 .user-nav {
+  $menu-transition-time: 150ms;
+
   display: flex;
   align-items: stretch;
 
   &__icon-box, &__user {
+    position: relative;
+
     display: flex;
     align-items: center;
 
@@ -15,10 +20,6 @@
     &:hover {
       background-color: variables.$grey-light-2;
     }
-  }
-
-  &__icon-box {
-    position: relative;
   }
 
   &__icon {
@@ -58,5 +59,53 @@
 
   &__user-name {
     font-size: 1.2rem;
+  }
+
+  // USER NAV MENU
+  :is(&__user, &__icon-box) > &__menu-slot {
+    visibility: hidden;
+    opacity: 0;
+    transition: none;
+  }
+
+  :is(&__user, &__icon-box):is(:hover, :focus-within, :focus) > &__menu-slot {
+    visibility: visible;
+    opacity: 1;
+    transition: opacity $menu-transition-time ease-out;
+  }
+
+  &__menu-slot {
+    z-index: 999;
+
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  &__menu-slot--messages {
+    top: 100%;
+    left: 300%;
+    transform: translateX(-100%);
+  }
+
+  &__menu-slot--user {
+    top: 100%;
+    left: 100%;
+    transform: translateX(-100%);
+  }
+
+  @include mixins.respond(medium-phone) {
+    &__menu-slot {
+      z-index: 999;
+
+      position: fixed;
+
+      left: 1rem;
+      right: 1rem;
+      top: 4.5rem;
+      transform: none;
+    }
+
   }
 }

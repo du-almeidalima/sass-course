@@ -22,7 +22,7 @@
             <div class="header__search-slot">
                 <form action="#" role="search">
                     <div class="search">
-                        <input class="search__input" type="search" placeholder="Search Hotels..."
+                        <input class="search__input" type="text" placeholder="Search Hotels..."
                                aria-label="Search Hotels">
                         <button class="search__button" id="search-btn" aria-label="Search Button">
                             <svg class="search__icon" aria-labelledby="search-btn">
@@ -40,17 +40,205 @@
                         <svg class="user-nav__icon" aria-label="Notifications">
                             <use href="img/sprite.svg#icon-bookmark"></use>
                         </svg>
-                        <span class="user-nav__notification-badge">7</span>
+                        <span class="user-nav__notification-badge">13</span>
+                        <!-- BOOKMARKS MENU -->
+                        <div class="user-nav__menu-slot">
+                            <div class="user-nav-menu">
+                                <p class="user-nav-menu__header">
+                                    Bookmarks
+                                </p>
+                                <hr class="user-nav-menu__divider">
+                                <ul class="user-nav-menu__items">
+                                    <li class="user-nav-menu__item">
+                                        <img class="user-nav-menu__item-photo"
+                                             src="img/hotel-2-mobile.webp"
+                                             alt="Bookmark Hotel Las Palmas"
+                                        >
+
+                                        <div class="user-nav-menu__info-box">
+                                            <p class="user-nav-menu__item-name">Hotel Las Palmas</p>
+                                            <span class="user-nav-menu__item-subtext">Albufeira, Portugal</span>
+                                        </div>
+                                    </li>
+                                    <li class="user-nav-menu__item">
+                                        <img class="user-nav-menu__item-photo"
+                                             src="img/hotel-4-mobile.webp"
+                                             alt="Bookmark Hotel Las Palmas"
+                                        >
+
+                                        <div class="user-nav-menu__info-box">
+                                            <p class="user-nav-menu__item-name">The Plaza</p>
+                                            <span class="user-nav-menu__item-subtext">New York, USA</span>
+
+                                        </div>
+                                    </li>
+                                    <li class="user-nav-menu__item">
+                                        <img class="user-nav-menu__item-photo"
+                                             src="img/hotel-5-mobile.webp"
+                                             alt="Bookmark Hotel Las Palmas"
+                                        >
+
+                                        <div class="user-nav-menu__info-box">
+                                            <p class="user-nav-menu__item-name">Taj Mahal Palace</p>
+                                            <span class="user-nav-menu__item-subtext">Mumbai, India</span>
+                                        </div>
+                                    </li>
+                                    <li class="user-nav-menu__item">
+                                        <img class="user-nav-menu__item-photo"
+                                             src="img/hotel-6-mobile.webp"
+                                             alt="Bookmark Hotel Las Palmas"
+                                        >
+
+                                        <div class="user-nav-menu__info-box">
+                                            <p class="user-nav-menu__item-name">The Shelbourne Hotel</p>
+                                            <span class="user-nav-menu__item-subtext">Dublin, Ireland</span>
+                                        </div>
+                                    </li>
+                                </ul>
+                                <button class="user-nav-menu__show-all-button inline-button">Show all
+                                    <span>&rarr;</span></button>
+                            </div>
+                        </div>
                     </div>
                     <div class="user-nav__icon-box">
                         <svg class="user-nav__icon" aria-label="Chat">
                             <use href="img/sprite.svg#icon-forum"></use>
                         </svg>
-                        <span class="user-nav__notification-badge">13</span>
+                        <span class="user-nav__notification-badge">4</span>
+                        <!-- MESSAGES MENU -->
+                        <div class="user-nav__menu-slot user-nav__menu-slot--messages">
+                            <div class="user-nav-menu">
+                                <p class="user-nav-menu__header">
+                                    Messages
+                                </p>
+                                <div class="user-nav-menu__search">
+                                    <form action="#" role="search">
+                                        <div class="search search--no-stretch">
+                                            <input class="search__input" type="text"
+                                                   placeholder="Search or start a new conversation"
+                                                   aria-label="Search users">
+                                            <button class="search__button" id="users-search-btn"
+                                                    aria-label="Search Button">
+                                                <svg class="search__icon" aria-labelledby="search-btn">
+                                                    <use href="img/sprite.svg#icon-search"></use>
+                                                </svg>
+                                            </button>
+                                        </div>
+                                    </form>
+                                </div>
+                                <hr class="user-nav-menu__divider">
+                                <ul class="user-nav-menu__items">
+                                    <li class="user-nav-menu__item">
+                                        <img class="user-nav-menu__item-photo"
+                                             src="img/user-1.jpg"
+                                             alt="User 1 Profile"
+                                        >
+
+                                        <div class="user-nav-menu__info-box">
+                                            <p class="user-nav-menu__item-name">Ronald Becker</p>
+                                            <span class="user-nav-menu__item-subtext user-nav-menu__item-subtext--message">
+                                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est, nam.
+                                            </span>
+                                        </div>
+                                        <span class="user-nav-menu__item-message-unread-mark"></span>
+                                    </li>
+                                    <li class="user-nav-menu__item">
+                                        <img class="user-nav-menu__item-photo"
+                                             src="img/user-2.jpg"
+                                             alt="User 2 Profile"
+                                        >
+
+                                        <div class="user-nav-menu__info-box">
+                                            <p class="user-nav-menu__item-name">Amanda D. Hudson</p>
+                                            <span class="user-nav-menu__item-subtext user-nav-menu__item-subtext--message">
+                                                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                                                Ad aut consectetur cum dolorum minus modi pariatur quas repellat rerum ut.
+                                            </span>
+                                        </div>
+                                        <span class="user-nav-menu__item-message-unread-mark"></span>
+                                    </li>
+                                    <li class="user-nav-menu__item">
+                                        <img class="user-nav-menu__item-photo"
+                                             src="img/user-4.jpg"
+                                             alt="User 4 Profile"
+                                        >
+
+                                        <div class="user-nav-menu__info-box">
+                                            <p class="user-nav-menu__item-name">Jon-Paul Liu</p>
+                                            <span class="user-nav-menu__item-subtext user-nav-menu__item-subtext--message">
+                                                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                                                Eligendi quidem, ratione. Aperiam corporis, cupiditate excepturi
+                                                exercitationem illum laborum necessitatibus vero. Cumque cupiditate
+                                                exercitationem fugit laboriosam magni officiis omnis sunt! Accusantium
+                                                aspernatur atque dolorem dolorum error facere magnam, quia veritatis
+                                                voluptatum!
+                                            </span>
+                                        </div>
+                                        <span class="user-nav-menu__item-message-unread-mark"></span>
+                                    </li>
+                                    <li class="user-nav-menu__item">
+                                        <img class="user-nav-menu__item-photo"
+                                             src="img/user-3.jpg"
+                                             alt="User 3 Profile"
+                                        >
+
+                                        <div class="user-nav-menu__info-box">
+                                            <p class="user-nav-menu__item-name">Pierre House</p>
+                                            <span class="user-nav-menu__item-subtext">
+                                                Lorem ipsum dolor sit amet, consectetur elit.
+                                            </span>
+                                        </div>
+                                    </li>
+                                    <li class="user-nav-menu__item">
+                                        <img class="user-nav-menu__item-photo"
+                                             src="img/user-5.jpg"
+                                             alt="User 5 Profile"
+                                        >
+
+                                        <div class="user-nav-menu__info-box">
+                                            <p class="user-nav-menu__item-name">Dimitri Preston</p>
+                                            <span class="user-nav-menu__item-subtext">
+                                                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                                            </span>
+                                        </div>
+                                    </li>
+                                </ul>
+                                <button class="user-nav-menu__show-all-button inline-button">Show all
+                                    <span>&rarr;</span></button>
+                            </div>
+                        </div>
                     </div>
                     <div class="user-nav__user">
                         <img class="user-nav__user-photo" src="img/user.bmp" alt="User Photo">
                         <span class="user-nav__user-name">Eduardo L.</span>
+                        <!-- USER MENU -->
+                        <div class="user-nav__menu-slot user-nav__menu-slot--user">
+                            <div class="user-nav-menu user-nav-menu--user-menu">
+                                <ul class="user-nav-menu__items">
+                                    <li class="user-nav-menu__item">
+                                        <svg class="user-nav-menu__item-icon" aria-label="Payment Options">
+                                            <use href="img/user-menu-sprite.svg#icon-credit_card"></use>
+                                        </svg>
+                                        <p class="user-nav-menu__item-icon-name">Payment Options</p>
+                                    </li>
+                                    <li class="user-nav-menu__item">
+                                        <svg class="user-nav-menu__item-icon" aria-label="Account Settings">
+                                            <use href="img/user-menu-sprite.svg#icon-settings"></use>
+                                        </svg>
+                                        <p class="user-nav-menu__item-icon-name">Account Settings</p>
+                                    </li>
+                                </ul>
+                                <hr class="user-nav-menu__divider">
+                                <ul class="user-nav-menu__items">
+                                    <li class="user-nav-menu__item">
+                                        <svg class="user-nav-menu__item-icon" aria-label="Log Out">
+                                            <use href="img/user-menu-sprite.svg#icon-logout"></use>
+                                        </svg>
+                                        <p class="user-nav-menu__item-icon-name">Log Out</p>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
                 </nav>
             </div>
