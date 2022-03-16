@@ -79,6 +79,7 @@
     align-self: stretch;
     display: flex;
     flex-flow: column nowrap;
+    justify-content: center;
 
     margin-right: auto;
   }
@@ -94,7 +95,7 @@
   }
 
   &__item-icon {
-    $size: 3rem;
+    $size: 2rem;
 
     width: $size;
     height: $size;

@@ -339,6 +339,7 @@
   align-self: stretch;
   display: flex;
   flex-flow: column nowrap;
+  justify-content: center;
   margin-right: auto;
 }
 .user-nav-menu__item-photo {
@@ -348,8 +349,8 @@
   border-radius: 50%;
 }
 .user-nav-menu__item-icon {
-  width: 3rem;
-  height: 3rem;
+  width: 2rem;
+  height: 2rem;
   fill: #777;
 }
 .user-nav-menu__item-icon-name {
@@ -384,6 +385,7 @@
 
 .gallery {
   display: flex;
+  flex-flow: row wrap;
   cursor: pointer;
 }
 .gallery__item {
@@ -429,31 +431,44 @@
   transition: transform 250ms ease-out, color 250ms linear 250ms;
   color: #fff;
 }
+@media only screen and (max-width: 500px) {
+  .gallery__item {
+    flex: 1 1 33%;
+  }
+  .gallery__item:first-of-type {
+    flex: 0 0 100%;
+  }
+  .gallery__item:first-of-type .gallery__photo-caption {
+    height: 25%;
+    font-size: 1.75rem;
+  }
+}
 
 .overview {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 2rem;
-  row-gap: 0;
-  padding-left: 3rem;
   border-bottom: 1px solid #f4f2f2;
 }
+.overview__details {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  padding: 2rem 3rem;
+}
 @media only screen and (max-width: 500px) {
-  .overview {
+  .overview__details {
     flex-wrap: wrap;
   }
 }
 .overview__heading {
-  padding: 1.5rem 0;
   font-size: 2.5rem;
   font-weight: 300;
   text-transform: uppercase;
   letter-spacing: 2px;
+  white-space: nowrap;
 }
 @media only screen and (max-width: 600px) {
   .overview__heading {
-    padding: 1.25rem 0;
     font-size: 1.8rem;
   }
 }
@@ -476,6 +491,7 @@
   display: flex;
   align-items: center;
   gap: 0.5rem;
+  white-space: nowrap;
   font-size: 1.2rem;
 }
 .overview__rating {

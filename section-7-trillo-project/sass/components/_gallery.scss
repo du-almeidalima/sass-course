@@ -5,6 +5,7 @@
   $animation-time: 250ms;
 
   display: flex;
+  flex-flow: row wrap;
 
   cursor: pointer;
 
@@ -53,7 +54,6 @@
 
       font-size: 1rem;
     }
-
   }
 
   &__item:hover > &__photo {
@@ -67,5 +67,21 @@
             transform $animation-time ease-out,
             color $animation-time linear $animation-time;
     color: variables.$font-white;
+  }
+
+  @include mixins.respond(medium-phone) {
+    &__item {
+      flex: 1 1 33%;
+    }
+
+    &__item:first-of-type {
+      flex: 0 0 100%;
+    }
+
+    &__item:first-of-type &__photo-caption {
+      height: 25%;
+
+      font-size: 1.75rem;
+    }
   }
 }

@@ -3,29 +3,30 @@
 
 .overview {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 2rem;
-  row-gap: 0;
-
-  padding-left: 3rem;
   border-bottom: variables.$divider-border;
 
-  @include mixins.respond(medium-phone) {
-    flex-wrap: wrap;
+
+  &__details {
+    flex: 1;
+
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    padding: 2rem 3rem;
+
+    @include mixins.respond(medium-phone) {
+      flex-wrap: wrap;
+    }
   }
 
   &__heading {
-    padding: 1.5rem 0;
-
     font-size: 2.5rem;
     font-weight: 300;
     text-transform: uppercase;
     letter-spacing: 2px;
+    white-space: nowrap;
 
     @include mixins.respond(large-phone) {
-      padding: 1.25rem 0;
-
       font-size: 1.8rem;
     }
 
@@ -57,6 +58,8 @@
     display: flex;
     align-items: center;
     gap: .5rem;
+
+    white-space: nowrap;
 
     font-size: 1.2rem;
   }
