@@ -1,0 +1,66 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+}
+
+nav {
+  margin: 30px;
+  background-color: #a1e8e5;
+}
+nav::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.navigation {
+  float: left;
+  list-style: none;
+}
+.navigation li {
+  display: inline-block;
+}
+.navigation li:not(:first-child) {
+  margin-left: 20px;
+}
+.navigation li > a {
+  text-decoration: none;
+  text-transform: uppercase;
+  text-align: center;
+  color: white;
+}
+
+.buttons {
+  float: right;
+}
+
+.btn-hot:link, .btn-main:link {
+  display: inline-block;
+  padding: 10px;
+  width: 150px;
+  border-radius: 50px;
+  text-decoration: none;
+  text-transform: uppercase;
+  text-align: center;
+  color: #4d4d4d;
+}
+
+.btn-main:link {
+  background-color: #fbe7c6;
+}
+.btn-main:hover {
+  background-color: #f8d296;
+}
+
+.btn-hot:link {
+  background-color: #ffadbb;
+}
+.btn-hot:hover {
+  background-color: #ffc7d0;
+}
+
+/*# sourceMappingURL=style.css.map */
