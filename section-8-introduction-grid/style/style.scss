@@ -9,8 +9,10 @@
 
 .container {
   display: grid;
-  grid-template-rows: 150px 150px;
-  grid-template-columns: 150px 150px 150px;
+  grid-template-rows: repeat(2, 150px);
+  // Takes 50% of the parent ignoring gaps
+  // grid-template-columns: repeat(50%, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 30px;
 
   width: 800px;
@@ -27,6 +29,14 @@
 
   &--1 {
     background-color: orange;
+    // grid-row-start: 2;
+    // grid-row-end: 3;
+    // grid-column-start: 2;
+    // grid-column-end: 3;
+    // grid-row: 2 / 3;
+    // grid-column: 2 / 3;
+    // grid-row-start / grid-column-start / grid-row-end / grid-column-end
+    grid-area: 2 / 3 / 2 / 3;
   }
 
   &--2 {
@@ -39,10 +49,14 @@
 
   &--4 {
     background-color: palevioletred;
+    grid-row: 1 / 2;
+    grid-column: 2 / 3;
   }
 
   &--5 {
     background-color: royalblue;
+    grid-row: 1 / 2;
+    grid-column: 3 / 4;
   }
 
   &--6 {
