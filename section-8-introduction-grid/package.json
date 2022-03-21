@@ -4,7 +4,7 @@
   "author": "Eduardo Lima",
   "main": "index.js",
   "scripts": {
-    "watch:sass": "sass sass/style.scss css/style.css -w",
+    "watch:sass": "sass style/style.scss style/style.css -w",
     "devserver": "live-server",
     "start": "npm-run-all --parallel devserver watch:sass"
   },
