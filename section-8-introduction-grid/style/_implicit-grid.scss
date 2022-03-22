@@ -1,0 +1,23 @@
+.implicit-container {
+  display: grid;
+  grid-template-rows: repeat(2, 150px);
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+  //Style implicit grid
+  grid-auto-rows: 75px;
+  grid-auto-columns: .5fr;
+  // Where auto cells should be placed, a new row or a new column
+  grid-auto-flow: row;
+
+  width: 80vw;
+  margin: auto;
+
+  background-color: beige;
+}
+
+.implicit-item {
+  padding: 20px;
+  border-radius: 15px;
+
+  background-color: orange;
+}
