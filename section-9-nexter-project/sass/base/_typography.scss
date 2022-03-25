@@ -1,0 +1,8 @@
+@use '../abstract/variables';
+
+body {
+  color: variables.$color-grey-dark-2;
+  font-weight: 300;
+  font-family: variables.$font-primary;
+  line-height: 1.6;
+}
