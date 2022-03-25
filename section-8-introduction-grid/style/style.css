@@ -79,6 +79,45 @@
   grid-column: 1/-1;
 }
 
+.min-max-container {
+  display: grid;
+  grid-template-rows: repeat(2, 150px);
+  grid-template-columns: minmax(150px, 400px) repeat(3, 1fr);
+  grid-template-rows: repeat(2, minmax(150px, min-content));
+  width: 60vw;
+  height: 1000px;
+  margin: auto;
+  background-color: beige;
+}
+
+.min-max-item {
+  padding: 10px;
+}
+.min-max-item--1 {
+  background-color: orangered;
+}
+.min-max-item--2 {
+  background-color: greenyellow;
+}
+.min-max-item--3 {
+  background-color: blueviolet;
+}
+.min-max-item--4 {
+  background-color: palevioletred;
+}
+.min-max-item--5 {
+  background-color: royalblue;
+}
+.min-max-item--6 {
+  background-color: goldenrod;
+}
+.min-max-item--7 {
+  background-color: chocolate;
+}
+.min-max-item--8 {
+  background-color: aquamarine;
+}
+
 *,
 *::after,
 *::before {
