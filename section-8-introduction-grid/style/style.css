@@ -81,11 +81,9 @@
 
 .min-max-container {
   display: grid;
-  grid-template-rows: repeat(2, 150px);
   grid-template-columns: minmax(150px, 400px) repeat(3, 1fr);
   grid-template-rows: repeat(2, minmax(150px, min-content));
   width: 60vw;
-  height: 1000px;
   margin: auto;
   background-color: beige;
 }
@@ -118,6 +116,46 @@
   background-color: aquamarine;
 }
 
+.responsive-container {
+  display: grid;
+  grid-template-rows: repeat(2, 150px);
+  grid-template-columns: repeat(auto-fill, 100px);
+  grid-template-columns: repeat(auto-fit, 100px);
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  width: 80vw;
+  margin: auto;
+  background-color: beige;
+  justify-content: center;
+}
+
+.responsive-item {
+  padding: 10px;
+}
+.responsive-item--1 {
+  background-color: orangered;
+}
+.responsive-item--2 {
+  background-color: greenyellow;
+}
+.responsive-item--3 {
+  background-color: blueviolet;
+}
+.responsive-item--4 {
+  background-color: palevioletred;
+}
+.responsive-item--5 {
+  background-color: royalblue;
+}
+.responsive-item--6 {
+  background-color: goldenrod;
+}
+.responsive-item--7 {
+  background-color: chocolate;
+}
+.responsive-item--8 {
+  background-color: aquamarine;
+}
+
 *,
 *::after,
 *::before {
@@ -133,6 +171,10 @@ p {
   text-align: center;
   margin: revert;
   padding: revert;
+}
+
+hr {
+  margin: 30px 0;
 }
 
 /*# sourceMappingURL=style.css.map */

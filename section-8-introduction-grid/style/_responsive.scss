@@ -1,0 +1,60 @@
+.responsive-container {
+  display: grid;
+  grid-template-rows: repeat(2, 150px);
+  // auto-fill: It will create the maximum amount of tracks for a given space. For example, bellow it will
+  // generate 10 columns, because 100px can fit 10 times inside 1000px
+  grid-template-columns: repeat(auto-fill, 100px);
+
+  // auto-fit: It will determine the minimum number of tracks based on the amount of items. However,
+  // it will still generate 10 columns, due to the same reason as above, be it will colapse the empty columns with a width of 0
+  // Even on DevTools, despite it saying that it has 10 columns or tacks, it will only show 8
+  grid-template-columns: repeat(auto-fit, 100px);
+
+  // We can do some neat things, such as auto-generating tracks, and breaking into auto-rows
+  // Explanation: auto-fit will only generate (visibly) enough tracks. minmax will set a range that each track
+  // can have. However, once it reach its threshold, the grid will break into a auto-row/auto-column
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+
+  // width: 1000px;
+  width: 80vw;
+  margin: auto;
+
+  background-color: beige;
+  justify-content: center;
+}
+
+.responsive-item {
+  padding: 10px;
+
+  &--1 {
+    background-color: orangered;
+  }
+
+  &--2 {
+    background-color: greenyellow;
+  }
+
+  &--3 {
+    background-color: blueviolet;
+  }
+
+  &--4 {
+    background-color: palevioletred;
+  }
+
+  &--5 {
+    background-color: royalblue;
+  }
+
+  &--6 {
+    background-color: goldenrod;
+  }
+
+  &--7 {
+    background-color: chocolate;
+  }
+
+  &--8 {
+    background-color: aquamarine;
+  }
+}
