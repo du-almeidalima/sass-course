@@ -1,0 +1,5 @@
+@use "../abstract/variables";
+
+.features {
+  background-color: variables.$color-grey-light-2;
+}

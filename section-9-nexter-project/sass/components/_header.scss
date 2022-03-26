@@ -1,0 +1,5 @@
+@use "../abstract/variables";
+
+.header {
+  background-color: variables.$color-grey-dark-1;
+}

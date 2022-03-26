@@ -1,0 +1,5 @@
+@use "../abstract/variables";
+
+.homes {
+  background-color: variables.$color-secondary;
+}
