@@ -1,5 +1,32 @@
 @use "../abstract/variables";
 
 .features {
-  background-color: variables.$color-grey-light-2;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 6rem;
+
+  margin: 15rem;
+}
+
+.feature {
+  display: grid;
+  grid-template-columns: [icon] min-content [text] 1fr;
+  column-gap: 1rem;
+
+  &__icon {
+    $size: 4rem;
+
+    grid-column: icon;
+    grid-row: 1 / -1;
+    align-self: start;
+
+    width: $size;
+    height: $size;
+
+    fill: currentColor;
+  }
+
+  &__text {
+    grid-column: text;
+  }
 }
