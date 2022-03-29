@@ -2,31 +2,33 @@
 
 .features {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(auto-fill, minmax(25rem, 1fr));
   gap: 6rem;
+  align-items: start;
 
-  margin: 15rem;
+  margin: 15rem 0;
 }
 
 .feature {
   display: grid;
   grid-template-columns: [icon] min-content [text] 1fr;
-  column-gap: 1rem;
+  gap: 1.5rem;
 
   &__icon {
-    $size: 4rem;
+    $size: 4.5rem;
 
     grid-column: icon;
-    grid-row: 1 / -1;
+    // The "-1" only works for explicit Grid'
+    grid-row: 1 / span 2;
     align-self: start;
 
     width: $size;
     height: $size;
 
-    fill: currentColor;
+    fill: variables.$color-primary;
   }
 
   &__text {
-    grid-column: text;
+    font-size: 1.7rem;
   }
 }
