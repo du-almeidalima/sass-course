@@ -6,6 +6,18 @@
   }
 
   &__content {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: flex-start;
+
+    padding: 6rem 8vw;
+
     background-color: variables.$color-grey-light-1;
+  }
+
+  &__text {
+    font-size: 1.5rem;
+    font-style: italic;
   }
 }

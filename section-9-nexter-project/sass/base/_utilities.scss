@@ -1,0 +1,17 @@
+@for $spacing from 1 through 10 {
+  .u-margin-#{$spacing} {
+    margin: $spacing * 1rem
+  }
+  .u-margin-top-#{$spacing} {
+    margin-top: $spacing * 1rem
+  }
+  .u-margin-right-#{$spacing} {
+    margin-right: $spacing * 1rem
+  }
+  .u-margin-bottom-#{$spacing} {
+    margin-bottom: $spacing * 1rem
+  }
+  .u-margin-left-#{$spacing} {
+    margin-left: $spacing * 1rem
+  }
+}
