@@ -34,7 +34,7 @@ body {
 .heading-3 {
   @extend %heading;
   font-size: 1.6rem;
-  color: variables.$font-primary;
+  color: variables.$color-primary;
   text-transform: uppercase;
 }
 

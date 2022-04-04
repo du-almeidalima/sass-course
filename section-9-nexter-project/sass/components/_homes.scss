@@ -1,5 +1,121 @@
 @use "../abstract/variables";
 
+.homes-section {
+  margin: 7.5rem 0 15rem 0;
+}
+
 .homes {
-  background-color: variables.$color-secondary;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+  gap: 7rem;
+}
+
+.home {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-row-gap: 3rem;
+  justify-content: center;
+
+  background-color: variables.$color-grey-light-1;
+
+  &__img,
+  &__name,
+  &__btn {
+    grid-column: 1 / -1;
+  }
+
+  &__img {
+    z-index: 1;
+
+    grid-row: 1 / 2;
+
+    width: 100%;
+  }
+
+  &__like-btn {
+    $size: 2.5rem;
+
+    z-index: 2;
+
+    grid-row: 1 / 2;
+    grid-column: 2 / 3;
+    justify-self: right;
+
+    width: $size;
+    height: $size;
+    margin: 1rem;
+
+    background: transparent;
+    outline: none;
+    border: none;
+
+    cursor: pointer;
+
+    &:is(:hover, :focus) {
+      svg {
+        fill: variables.$color-primary-dark;
+      }
+    }
+
+    &:active {
+      svg {
+        fill: darken(variables.$color-primary-dark, 10%);
+      }
+    }
+
+    svg {
+      width: 100%;
+      height: 100%;
+
+      fill: variables.$color-primary;
+    }
+  }
+
+  &__name {
+    z-index: 2;
+
+    grid-row: 1 / 2;
+    justify-self: center;
+    align-self: end;
+
+    width: 80%;
+    padding: 1.25rem;
+
+    transform: translateY(50%);
+
+    font-family: variables.$font-display;
+    font-size: 1.6rem;
+    font-weight: 400;
+    text-align: center;
+    color: #fff;
+
+    background-color: variables.$color-secondary;
+  }
+
+  &__location,
+  &__rooms {
+    margin-top: 2.5rem;
+  }
+
+  &__location,
+  &__rooms,
+  &__area,
+  &__price {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+
+    padding-left: 2rem;
+
+    font-size: 1.5rem;
+
+    svg {
+      $size: 2rem;
+
+      height: $size;
+      width: $size;
+
+      fill: variables.$color-primary;
+    }
+  }
 }

@@ -1,12 +1,14 @@
 @use "../abstract/variables";
 
+.features-section {
+  margin: 7.5rem 0 15rem 0;
+}
+
 .features {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(25rem, 1fr));
   gap: 6rem;
   align-items: start;
-
-  margin: 15rem 0;
 }
 
 .feature {
