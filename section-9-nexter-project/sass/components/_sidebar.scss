@@ -1,5 +1,32 @@
 @use "../abstract/variables";
 
 .sidebar {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+
+  padding-top: 3.5rem;
   background-color: variables.$color-primary;
+}
+
+.nav-btn {
+  $height: 2px;
+  $offset-from-center: 1.5rem;
+
+  display: flex;
+  flex-flow: column;
+  gap: 1rem;
+
+  border: none;
+  border-radius: 0;
+
+  background-color: transparent;
+  cursor: pointer;
+
+  &__icon {
+    width: 4.5rem;
+    height: $height;
+
+    background-color: #fff;
+  }
 }
