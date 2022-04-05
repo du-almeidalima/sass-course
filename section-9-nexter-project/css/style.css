@@ -140,7 +140,46 @@
 }
 
 .header {
-  background-color: #54483A;
+  display: grid;
+  grid-template-rows: 1fr min-content 6rem 1fr;
+  grid-template-columns: max-content;
+  gap: 1.5rem;
+  justify-content: center;
+  padding: 4rem 8rem 8rem;
+  background-image: linear-gradient(rgba(16, 29, 44, 0.8), rgba(16, 29, 44, 0.8)), url(../img/hero.jpeg);
+  background-size: cover;
+  background-position: center;
+}
+.header__btn {
+  justify-self: start;
+  align-self: start;
+}
+.header__logo {
+  justify-self: center;
+  height: 3.5rem;
+}
+.header__seenon-text {
+  display: grid;
+  grid-template-columns: 1fr max-content 1fr;
+  align-items: center;
+  gap: 2rem;
+  font-size: 1.6rem;
+  color: #aaa;
+}
+.header__seenon-text::before, .header__seenon-text::after {
+  content: "";
+  height: 1px;
+  background-color: currentColor;
+}
+.header__seenon-logos {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  justify-items: center;
+  gap: 3rem;
+}
+.header__seenon-logos img {
+  height: 2.5rem;
+  filter: brightness(70%);
 }
 
 .homes-section {
@@ -177,6 +216,7 @@
   height: 2.5rem;
   margin: 1rem;
   background: transparent;
+  outline: none;
   border: none;
   cursor: pointer;
 }
@@ -342,6 +382,12 @@ body {
   font-family: "Josefin Sans", sans-serif;
   font-weight: 400;
 }
+.heading-1 {
+  font-size: 4.5rem;
+  line-height: 1;
+  color: #f9f7f6;
+}
+
 .heading-2 {
   font-size: 4rem;
   font-style: italic;

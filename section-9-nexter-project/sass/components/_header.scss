@@ -1,5 +1,58 @@
 @use "../abstract/variables";
 
 .header {
-  background-color: variables.$color-grey-dark-1;
+  display: grid;
+  grid-template-rows: 1fr min-content 6rem 1fr;
+  grid-template-columns: max-content;
+  gap: 1.5rem;
+  justify-content: center;
+
+  padding: 4rem 8rem 8rem;
+
+  background-image:
+    linear-gradient(rgba(variables.$color-secondary, .8), rgba(variables.$color-secondary, .8)),
+    url(../img/hero.jpeg);
+  background-size: cover;
+  background-position: center;
+
+  &__btn {
+    justify-self: start;
+    align-self: start;
+  }
+
+  &__logo {
+    justify-self: center;
+    height: 3.5rem;
+  }
+
+  &__seenon-text {
+    display: grid;
+    grid-template-columns: 1fr max-content 1fr;
+    align-items: center;
+    gap: 2rem;
+
+    font-size: 1.6rem;
+    color: variables.$color-grey-light-2;
+
+    // CSS Grid treat pseudo elements a items, so it's possible to
+    // place them!
+    &::before,
+    &::after {
+      content: "";
+      height: 1px;
+      background-color: currentColor;
+    }
+  }
+
+  &__seenon-logos {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    justify-items: center;
+    gap: 3rem;
+
+    img {
+      height: 2.5rem;
+      filter: brightness(70%);
+    }
+  }
 }
