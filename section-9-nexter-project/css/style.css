@@ -263,7 +263,36 @@
 }
 
 .realtors {
+  display: grid;
+  place-content: center;
+  justify-items: center;
+  gap: 3rem;
   background-color: #101d2c;
+}
+
+.realtors-list {
+  display: flex;
+  flex-flow: column;
+  gap: 5vh;
+}
+.realtors-list__item {
+  display: grid;
+  grid-template-columns: 8rem 1fr;
+  column-gap: 2rem;
+}
+.realtors-list__item-image {
+  display: block;
+  width: 100%;
+  border-radius: 50%;
+}
+.realtors-list__item-details {
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+}
+.realtors-list__item-sold {
+  text-transform: uppercase;
+  color: #aaa;
 }
 
 .sidebar {

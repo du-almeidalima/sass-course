@@ -1,5 +1,39 @@
 @use "../abstract/variables";
 
 .realtors {
+  display: grid;
+  place-content: center;
+  justify-items: center;
+  gap: 3rem;
+
   background-color: variables.$color-secondary;
+}
+
+.realtors-list {
+  display: flex;
+  flex-flow: column;
+  gap: 5vh;
+
+  &__item {
+    display: grid;
+    grid-template-columns: 8rem 1fr;
+    column-gap: 2rem;
+  }
+
+  &__item-image {
+    display: block;
+    width: 100%;
+    border-radius: 50%;
+  }
+
+  &__item-details {
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+  }
+
+  &__item-sold {
+    text-transform: uppercase;
+    color: variables.$color-grey-light-2;
+  }
 }
