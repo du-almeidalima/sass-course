@@ -1,0 +1,32 @@
+@use "variables" as vars;
+
+// MEDIA QUERY MANAGER
+/*
+  0 - 600px - Small
+  600 - 800px - Medium
+  800 - 1000px - Large
+  1000 - 1200px - Largest
+  1200 - 1800px - Desktop (normal styles)
+ */
+
+/**
+ $breakpoint:
+ - small
+ - medium
+ - large
+ - largest
+ */
+@mixin respond($breakpoint) {
+  @if $breakpoint == small {
+   @media only screen and (max-width: 600px) { @content }
+  }
+  @if $breakpoint == medium {
+   @media only screen and (max-width: 800px) { @content }
+  }
+  @if $breakpoint == large {
+    @media only screen and (max-width: 1000px) { @content }
+  }
+  @if $breakpoint == largest {
+    @media only screen and (max-width: 1200px) { @content }
+  }
+}

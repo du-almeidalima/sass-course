@@ -1,7 +1,12 @@
 @use "../abstract/variables";
+@use "../abstract/mixins";
 
 .features-section {
   margin: 7.5rem 0 15rem 0;
+
+  @include mixins.respond(small) {
+    margin: 5rem 0 5rem 0;
+  }
 }
 
 .features {

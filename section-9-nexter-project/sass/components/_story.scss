@@ -1,4 +1,5 @@
 @use "../abstract/variables";
+@use "../abstract/mixins";
 
 .story {
   &__pictures {
@@ -12,6 +13,10 @@
         rgba(variables.$color-primary, 0.5)
       ),
       url(../img/back.jpg);
+
+    @include mixins.respond(medium) {
+      padding: 3rem;
+    }
   }
 
   &__img {
@@ -22,6 +27,12 @@
       grid-column: 2 / span 4;
 
       box-shadow: 0 2rem 5rem rgba($color: #000000, $alpha: 0.1);
+
+      
+      @include mixins.respond(medium) {
+        grid-row: 1 / -1;
+        grid-column: 1 / 5;
+      }
     }
 
     &--2 {
@@ -33,6 +44,11 @@
       width: 115%;
 
       box-shadow: 0 2rem 5rem rgba($color: #000000, $alpha: 0.3);
+
+      @include mixins.respond(medium) {
+        grid-row: 1 / -1;
+        width: 100%;
+      }
     }
   }
 

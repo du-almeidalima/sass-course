@@ -1,4 +1,9 @@
-@use "../abstract/variables";
+@use "../abstract/mixins";
 
-body {
+html {
+  font-size: 62.5%;
+
+  @include mixins.respond(largest) {
+    font-size: 50%;
+  }
 }

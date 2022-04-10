@@ -1,9 +1,12 @@
 @use "../abstract/variables";
+@use "../abstract/mixins";
 
 .header {
   display: grid;
-  grid-template-rows: 1fr min-content 6rem 1fr;
-  grid-template-columns: max-content;
+  // The minmax allow us to set a range for the title item, so when the viewport is large it should at least have
+  // 6rem but when broken into lines, it should stretch
+  grid-template-rows: 1fr min-content minmax(6rem, min-content) 1fr;
+  grid-template-columns: auto;
   gap: 1.5rem;
   justify-content: center;
 
@@ -14,6 +17,10 @@
     url(../img/hero.jpeg);
   background-size: cover;
   background-position: center;
+
+  @include mixins.respond(small) {
+    padding: 5rem;
+  }
 
   &__btn {
     justify-self: start;
@@ -47,11 +54,12 @@
   &__seenon-logos {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    justify-items: center;
+    place-items: center;
     gap: 3rem;
 
     img {
-      height: 2.5rem;
+      max-height: 2.5rem;
+      max-width: 100%;
       filter: brightness(70%);
     }
   }

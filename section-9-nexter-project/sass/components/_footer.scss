@@ -1,8 +1,13 @@
 @use "../abstract/variables";
+@use "../abstract/mixins";
 
 .footer {
   padding: 8rem;
   background-color: variables.$color-secondary;
+
+  @include mixins.respond(small) {
+    padding: 8rem 1rem 3rem;
+  }
 }
 
 .footer-links {
@@ -12,6 +17,10 @@
   align-items: center;
 
   list-style: none;
+
+  @include mixins.respond(small) {
+    grid-template-columns: 1fr;
+  }
 
   &__link:is(:link, :visited) {
     display: block;
@@ -41,4 +50,8 @@
   font-size: 1.4rem;
   text-align: center;
   color: variables.$color-grey-light-2;
+
+  @include mixins.respond(small) {
+    width: 90%;
+  }
 }

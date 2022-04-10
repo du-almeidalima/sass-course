@@ -1,4 +1,5 @@
 @use "../abstract/variables";
+@use "../abstract/mixins";
 
 .realtors {
   display: grid;
@@ -7,22 +8,40 @@
   gap: 3rem;
 
   background-color: variables.$color-secondary;
+
+  @include mixins.respond(medium) {
+    padding: 5rem 0;
+  }
 }
 
 .realtors-list {
   display: flex;
   flex-flow: column;
+  justify-content: center;
   gap: 5vh;
+
+  @include mixins.respond(medium) {
+    flex-flow: row wrap;
+  }
 
   &__item {
     display: grid;
     grid-template-columns: 8rem 1fr;
-    column-gap: 2rem;
+    justify-items: center;
+    gap: 2rem;
+
+    @include mixins.respond(small) {
+      grid-template-rows: 8rem 1fr;
+      grid-template-columns: max-content;
+    }
   }
 
   &__item-image {
+    $size: 8rem;
+
     display: block;
-    width: 100%;
+    width: $size;
+    height: $size;
     border-radius: 50%;
   }
 
@@ -30,6 +49,10 @@
     display: flex;
     flex-flow: column;
     justify-content: center;
+
+    @include mixins.respond(small) {
+      align-items: center;
+    }
   }
 
   &__item-sold {
