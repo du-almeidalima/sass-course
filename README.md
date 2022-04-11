@@ -5,4 +5,4 @@ The purpose of this repository is to log and archive my learning during the
 
 ## Projects
 
-You can see all course projects [here](https://du-almeidalima.github.io/sass-course/).
+You can see all course projects [HERE](https://du-almeidalima.github.io/sass-course/).
